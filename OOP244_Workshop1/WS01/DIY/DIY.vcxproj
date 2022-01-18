@@ -144,11 +144,11 @@
     <ClCompile Include="Phone.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cStrTools.h" />
-    <ClInclude Include="Phone.h" />
+    <Text Include="phones.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="phones.txt" />
+    <ClInclude Include="cStrTools.h" />
+    <ClInclude Include="Phone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

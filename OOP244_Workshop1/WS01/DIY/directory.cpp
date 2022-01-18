@@ -1,15 +1,14 @@
 /* ------------------------------------------------------
 Workshop 1 part 2
-Module: directory
-Filename: directory.cpp
-Version 1
-Author	Fardad Soleimanloo
-Revision History
------------------------------------------------------------
-Date       Reason
+Name   : chinganshih
+ID     : 148221195
+Email  : cshih9@myseneca.ca
+Section: OOP244 NMM
 -----------------------------------------------------------*/
+
 #include "Phone.h"
 using namespace sdds;
+
 int main() {
    phoneDir("Star Wars", "phones.txt");
    return 0;

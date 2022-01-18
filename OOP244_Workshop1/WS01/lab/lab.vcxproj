@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cStrTools.cpp" />
-    <ClCompile Include="w1p1.cpp" />
     <ClCompile Include="Word.cpp" />
     <ClCompile Include="WordStat.cpp" />
   </ItemGroup>

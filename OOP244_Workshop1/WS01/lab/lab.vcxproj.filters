@@ -20,9 +20,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="w1p1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cStrTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

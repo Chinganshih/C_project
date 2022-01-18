@@ -4,6 +4,7 @@
 #define WORD_H
 #include "cStrTools.h"
 
+//Never use the using statement in a header file
 namespace sdds {
 	
 	// Your header file content goes here
