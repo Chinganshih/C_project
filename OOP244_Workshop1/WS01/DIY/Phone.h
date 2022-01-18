@@ -32,7 +32,7 @@ namespace sdds {
 	void searchDir(struct Phone phone[], int numberOfPhone, char* pname);
 
 	//check file is existed or not
-	void isFileExisted(const char* fileName);
+	void isFileExisted(const char* programTitle, const char* fileName);
 
 
 }

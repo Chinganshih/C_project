@@ -1,3 +1,11 @@
+///* ------------------------------------------------------
+//Workshop 1 part 2
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 #include <iostream>
@@ -14,7 +22,7 @@ namespace sdds {
 	void phoneDir(const char* programTitle, const char* fileName) {
 
 		SearchTitle(programTitle);
-		isFileExisted(fileName);
+		isFileExisted(programTitle, fileName);
 
 	}
 
@@ -38,7 +46,7 @@ namespace sdds {
 	}
 
 	void searchDir(struct Phone phone[], int numberOfPhone, char* pname) {
-		int i, found=0;
+		int i;
 		char lowerName[MAX_NAME_LENGTH];
 
 		for ( i = 0; i < numberOfPhone; i++)
@@ -50,7 +58,7 @@ namespace sdds {
 		}
 	}
 
-	void isFileExisted(const char* fileName) {
+	void isFileExisted(const char* programTitle, const char* fileName) {
 		struct Phone phone[MAX_PHONE_INDEX] = { {0} };
 		int numberOfPhone;
 		char pname[MAX_NAME_LENGTH];
@@ -62,17 +70,19 @@ namespace sdds {
 			numberOfPhone = readFile(fp, phone, MAX_PHONE_INDEX);		
 			do
 			{
-				cout << "Enter a partial name to search (no spaces) or enter '!' to exit" << endl;
+				cout << "Enter a partial name to search (no spaces) or enter '!' to exit" << endl << "> ";
 				cin >> pname;
 				toLowerCaseAndCopy(pname, pname);
 				searchDir(phone, numberOfPhone, pname);
 
 			} while (strCmp(pname, "!"));
-			cout << "Thank you for using Star Wars directory." << endl;
+
 		}
 		else {
 			cout << fileName << " file not found!" << endl;
 		}
+
+		cout << "Thank you for using " << programTitle << " directory." << endl;
 		fclose(fp);
 	}
 

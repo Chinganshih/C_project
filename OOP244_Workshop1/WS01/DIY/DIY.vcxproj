@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cStrTools.cpp" />
-    <ClCompile Include="directory.cpp" />
+    <ClCompile Include="directory_pro.cpp" />
     <ClCompile Include="Phone.cpp" />
   </ItemGroup>
   <ItemGroup>
