@@ -10,6 +10,7 @@ Section: OOP244 NMM
 using namespace sdds;
 
 int main() {
-   phoneDir("Star Wars", "phones.txt");
+	
+   phoneDir("Star Wars", "Phones.txt");
    return 0;
 }
