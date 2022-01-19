@@ -20,13 +20,13 @@ namespace sdds {
 	void SearchTitle(const char* programTitle);
 
 	//read file from Phones.txt
-	int readFile(FILE* fp, struct Phone* phone, int MAX_PHONE_INDEX);
+	int readFile(FILE* fp, Phone* phone, int MAX_PHONE_INDEX);
 
 	//display record when it matches partial name
-	void displayRecord(struct Phone phone);
+	void displayRecord(Phone phone);
 
 	//Search partial name input by user and phone directory
-	void searchDir(struct Phone phone[], int numberOfPhone, char* pname);
+	void searchDir(Phone phone[], int numberOfPhone, char* pname);
 
 	// runs the phone directory appication
 	void phoneDir(const char* programTitle, const char* fileName);

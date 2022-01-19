@@ -23,7 +23,7 @@ namespace sdds {
 		cout << programTitle << " phone direcotry search" << endl << "-------------------------------------------------------" << endl;
 	}
 
-	int readFile(FILE* fp, struct Phone* phone, int MAX_PHONE_INDEX) {
+	int readFile(FILE* fp, Phone* phone, int MAX_PHONE_INDEX) {
 		int i=0;
 
 		while (!feof(fp) && i < MAX_PHONE_INDEX)
@@ -34,11 +34,11 @@ namespace sdds {
 		return i;
 	}
 
-	void displayRecord(struct Phone phone) {
+	void displayRecord(Phone phone) {
 		cout << phone.name << ": (" << phone.areaCode << ") " << phone.prefix << "-" << phone.number << endl;
 	}
 
-	void searchDir(struct Phone phone[], int numberOfPhone, char* pname) {
+	void searchDir(Phone phone[], int numberOfPhone, char* pname) {
 		int i;
 		char lowerName[MAX_NAME_LENGTH];
 
