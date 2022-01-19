@@ -19,13 +19,6 @@ namespace sdds {
 
 	const int MAX_PHONE_INDEX = 50;
 
-	void phoneDir(const char* programTitle, const char* fileName) {
-
-		SearchTitle(programTitle);
-		isFileExisted(programTitle, fileName);
-
-	}
-
 	void SearchTitle(const char* programTitle) {
 		cout << programTitle << " phone direcotry search" << endl << "-------------------------------------------------------" << endl;
 	}
@@ -58,16 +51,18 @@ namespace sdds {
 		}
 	}
 
-	void isFileExisted(const char* programTitle, const char* fileName) {
+	void phoneDir(const char* programTitle, const char* fileName) {
 		struct Phone phone[MAX_PHONE_INDEX] = { {0} };
 		int numberOfPhone;
 		char pname[MAX_NAME_LENGTH];
+
+		SearchTitle(programTitle);
 
 		FILE* fp = fopen(fileName, "r");
 
 		if (fp)
 		{
-			numberOfPhone = readFile(fp, phone, MAX_PHONE_INDEX);		
+			numberOfPhone = readFile(fp, phone, MAX_PHONE_INDEX);
 			do
 			{
 				cout << "Enter a partial name to search (no spaces) or enter '!' to exit" << endl << "> ";
@@ -84,8 +79,6 @@ namespace sdds {
 
 		cout << "Thank you for using " << programTitle << " directory." << endl;
 		fclose(fp);
+
 	}
-
-
-
 }

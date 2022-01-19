@@ -16,9 +16,6 @@ namespace sdds {
 		char number[MAX_PHONE_LENGTH];
 	};
 
-	// runs the phone directory appication
-	void phoneDir(const char* programTitle, const char* fileName);
-
 	//display title of program
 	void SearchTitle(const char* programTitle);
 
@@ -31,9 +28,8 @@ namespace sdds {
 	//Search partial name input by user and phone directory
 	void searchDir(struct Phone phone[], int numberOfPhone, char* pname);
 
-	//check file is existed or not
-	void isFileExisted(const char* programTitle, const char* fileName);
-
+	// runs the phone directory appication
+	void phoneDir(const char* programTitle, const char* fileName);
 
 }
 
