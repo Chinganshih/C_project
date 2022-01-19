@@ -106,7 +106,7 @@ namespace sdds{
     }
     void wordStats(const char* filename) {
         FILE* fptr = fopen(filename, "r");
-        Word words[MAX_NO_OF_WORDS] = { {"",0} };
+        Word words[MAX_NO_OF_WORDS] = { {0} };
         char word[MAX_WORD_LEN];
         char lowerCaseWord[MAX_WORD_LEN];
         int NoOfWords = 0;
