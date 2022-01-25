@@ -85,7 +85,11 @@ namespace sdds {
 	}
 
 	void record(const Car& C) {
+<<<<<<< HEAD
 		Car* newC = nullptr;
+=======
+		Car* newC;
+>>>>>>> afaec8227bca6e9239b0fb39d04bbdfe9f4ecb1c
 		
 		if (numberOfCar == carArrSize) {
 
