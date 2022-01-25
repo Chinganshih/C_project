@@ -10,7 +10,7 @@
 #include <cstdio>
 #include <iostream>
 #include <iomanip>
-#include <string>
+#include <cstring>
 #include "cStrTools.h"
 #include "Car.h"
 
@@ -60,8 +60,8 @@ namespace sdds {
 			read(input, MAX_MAKEMODEL, ',');
 			if (strCmp(input, "X"))
 			{
-				car[i].makeModel = new char[strlen(input) + 1];
-				strcpy(car[i].makeModel, input);
+				car[i].makeModel = new char[strLen(input) + 1];
+				strCpy(car[i].makeModel, input);
 				read(car[i].license, MAX_LICENSE - 1, ',');
 				cin >> car[i].time;
 				numberOfCar++;
@@ -85,7 +85,6 @@ namespace sdds {
 	}
 
 	void record(const Car& C) {
-		int i;
 		Car* newC;
 		
 		if (numberOfCar == carArrSize) {
