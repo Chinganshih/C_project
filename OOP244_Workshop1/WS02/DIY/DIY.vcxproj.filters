@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="cStrTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DNA.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -34,7 +34,7 @@
     <ClInclude Include="cStrTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DNA.h">
+    <ClInclude Include="DAN.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

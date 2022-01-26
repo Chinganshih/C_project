@@ -11,6 +11,7 @@ Date       Reason
 #include <iostream>
 #include "cStrTools.h"
 #include "DNA.h"
+
 using namespace std;
 using namespace sdds;
 int main() {

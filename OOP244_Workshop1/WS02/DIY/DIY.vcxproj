@@ -139,16 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cStrTools.cpp" />
     <ClCompile Include="DNA.cpp" />
+    <ClCompile Include="cStrTools.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dna.csv" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DAN.h" />
     <ClInclude Include="cStrTools.h" />
-    <ClInclude Include="DNA.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
