@@ -1,0 +1,374 @@
+Toyota C-HR	VYEEDG	1
+Alfa Romeo Giulia	OVQXIQ	4
+Buick Encore GX	ZIQSUF	7
+Jeep Gladiator	YFQOSQ	10
+Chevrolet Impala	MWPBNW	13
+Volkswagen Atlas Cross Sport	ESIJDW	16
+Toyota Prius Prime	AECYJV	19
+Lexus RZ	QONGCT	22
+Tesla Model S	MCGSVD	25
+Buick Envision	UTGBZM	28
+Toyota GR Supra	ASFVCE	31
+Ford Edge	VWMEND	34
+Rolls-Royce Cullinan	HBYRNT	37
+BMW M5	UWTATN	40
+Kia Niro	IQFXBZ	43
+Jeep Grand Cherokee	KRPNJM	46
+MAZDA MX-30	UGXRBJ	49
+Volvo C40 Recharge	CGQTQT	52
+Subaru Impreza	YXTFGV	55
+BMW iX	BBBXZW	58
+Toyota bZ4X	TPWHEP	101
+Genesis G70	LMPYGG	104
+Nissan GT-R	RQRMQX	107
+Jeep Compass	EIEBOQ	110
+Porsche Cayenne	QRTNZT	113
+MINI Hardtop 4 Door	RGMSGB	116
+Ford F350 Super Duty Crew Cab	EFPQTO	119
+Kia K5	JWWQGR	122
+Ford Ranger SuperCrew	AVRZDB	125
+Mercedes-Benz Mercedes-EQ EQE	UWBEJR	128
+Dodge Grand Caravan Passenger	WGJFSI	131
+Hyundai Santa Cruz	HVQTID	134
+Audi e-tron	GATUSY	137
+Audi e-tron Sportback	YYJAXM	140
+Jaguar F-PACE	TTVZXX	143
+Lincoln MKZ	SSYTAU	146
+Jeep Grand Cherokee 4xe	ZACGON	149
+Toyota Corolla Hatchback	FHOAEB	152
+Kia Optima Hybrid	ECIDOR	155
+Jaguar E-PACE	ZTGFLP	158
+Ford Ranger SuperCab	MKGNXJ	201
+Audi RS e-tron GT	SVKEMY	204
+Dodge Journey	VIJNOK	207
+Subaru Legacy	NSWFQK	210
+Tesla Model 3	GMJYPI	213
+Honda Civic Type R	PQYQWT	216
+Hyundai Ioniq Plug-in Hybrid	NQOHKA	219
+Nissan Rogue	DWGXVZ	222
+INFINITI QX50	TWVKND	225
+Mercedes-Benz Mercedes-EQ EQS	PPNPEE	228
+Mercedes-Benz GLC	YYOFBZ	231
+Hyundai Kona Electric	NKDNBP	234
+Audi RS 5	YIASAY	237
+Mitsubishi Mirage	WUQAPU	240
+Toyota Highlander	NKQMUQ	243
+Volvo S90	HFPPRX	246
+Rolls-Royce Ghost	RCQVYG	249
+Audi Q4 e-tron	LQMTIF	252
+Kia Optima Plug-in Hybrid	WQEVMI	255
+Ford Maverick	QFGGET	258
+Cadillac CT4	NHIPJQ	301
+Ferrari Portofino	DQUCOW	304
+Mercedes-Benz G-Class	WTRITF	307
+Chevrolet Colorado Extended Cab	JNWVKM	310
+Mercedes-Benz Mercedes-AMG GLA	KDDDJK	313
+MAZDA CX-30	VIWPNE	316
+Nissan Ariya	ZCEPPB	319
+Honda Odyssey	RJPUPS	322
+INFINITI QX55	ZMZUIW	325
+Lexus LS	PHPIQI	328
+BMW i3	NZHDPX	331
+Honda Accord	MYOJJK	334
+Kia Cadenza	RIECRF	337
+Dodge Challenger	MXKLXW	340
+Ford Expedition MAX	BBMUNG	343
+Maserati Ghibli	CYWVEW	346
+Rolls-Royce Phantom	MTGETG	349
+Buick Encore	UPKYLI	352
+MAZDA CX-50	BVXJMZ	355
+Bentley Flying Spur	VTCGRI	358
+Subaru Ascent	WIBTZS	401
+Nissan NV3500 HD Cargo	HNVVMG	404
+Land Rover Range Rover Evoque	GJZCKJ	407
+Chevrolet Equinox EV	KOZKCE	410
+Mercedes-Benz Mercedes-Maybach S-Class	WBJCPB	413
+Kia Carnival	OKXQMW	416
+MAZDA MX-5 Miata	CLGAZN	419
+Lexus GX	QWMXLO	422
+Ford F250 Super Duty Crew Cab	WBUKIN	425
+Maserati Levante	LPUXYU	428
+Land Rover Defender 90	JWWHGE	431
+Ferrari Roma	CISIHF	434
+MAZDA CX-5	FRVCYH	437
+MAZDA CX-70	NPZQJC	440
+Mercedes-Benz Mercedes-AMG GLC	QUCFOG	443
+Ford F150 Super Cab	DGNKCI	446
+Cadillac Escalade ESV	OXFFGS	449
+Mercedes-Benz E-Class	YKONBH	452
+Honda CR-V Hybrid	FQCSMF	455
+Mercedes-Benz Mercedes-Maybach GLS	NRVZLV	458
+Lexus IS	CWVIQS	501
+Bentley Bentayga	GSGUJJ	504
+Cadillac CT6-V	FEKANR	507
+Ford F250 Super Duty Regular Cab	AFLHRD	510
+Nissan Murano	BFBHQD	513
+Lamborghini Aventador	JRWLCY	516
+Hyundai Santa Fe Plug-in Hybrid	FQCJRD	519
+Chrysler Pacifica Hybrid	ATRVPB	522
+Kia Rio	LZWSMS	525
+GMC Canyon Extended Cab	MSSDWL	528
+Toyota Land Cruiser	YOKBXF	531
+MAZDA MX-5 Miata RF	GJBLAR	534
+Maserati Quattroporte	WEOXTS	537
+Audi Q5	PHJYRY	540
+Chevrolet Colorado Crew Cab	JYPIEB	543
+Nissan Armada	UCNNHY	546
+Nissan Kicks	TZFFTK	549
+Mercedes-Benz Metris Passenger	GSQEVH	552
+Jaguar F-TYPE	NFYMXA	555
+McLaren GT	MKDWBY	558
+Ram ProMaster Cargo Van	BEAVWG	601
+Hyundai Ioniq Hybrid	FKFUIC	604
+Mercedes-Benz C-Class	TUUFRD	607
+Toyota RAV4 Hybrid	YOMHWI	610
+Mercedes-Benz Mercedes-AMG GLB	VXQYWZ	613
+Audi A8	FCVXVX	616
+Volkswagen Jetta	ALRKML	619
+Honda Ridgeline	YRDZIZ	622
+MAZDA CX-9	VDGUDT	625
+Honda Insight	LRUWRA	628
+Mercedes-Benz Mercedes-AMG GLE	XVRKKX	631
+Lexus RX	YGBLFB	634
+BMW i8	TROKSA	637
+Lotus Evora GT	BHBCBM	640
+Acura RDX	MERQCR	643
+Audi e-tron GT	ZRZQMS	646
+Ford F350 Super Duty Regular Cab	OFALOP	649
+Ford Bronco	JEBWYJ	652
+Mercedes-Benz GLA	JFFHLE	655
+Audi A6	SDPINW	658
+Aston Martin DBX	BYFHLY	701
+Lincoln Navigator	XZGTWI	704
+Toyota Avalon	ETWESH	707
+Cadillac CT5	TGZYDM	710
+Chevrolet Bolt EV	UWAEFQ	713
+Ford F450 Super Duty Crew Cab	MBXXDG	716
+Kia Optima	JEWUYO	719
+Mercedes-Benz CLA	WJPEAV	722
+Land Rover Range Rover	DNQETT	725
+BMW M4	YAVUPL	728
+Toyota Corolla	LLWWWB	731
+Porsche Macan	TOQHAQ	734
+Audi S8	GRNIUR	737
+Mitsubishi Eclipse Cross	LBFHDB	740
+Lucid Air	PLMQOY	743
+Mitsubishi Mirage G4	HVUMFT	746
+Genesis Electrified G80	OXRBFB	749
+Audi S3	WCNQQW	752
+Toyota Camry	UILHVR	755
+Chevrolet Blazer EV	JBOOKF	758
+Hyundai Accent	SDQUZP	801
+Lexus GS	VMCIXC	804
+Kia Niro EV	IDNVBK	807
+Jeep Grand Wagoneer	XADJIW	810
+Porsche Panamera	YBBYEU	813
+MAZDA MAZDA3	VZKCYX	816
+Hyundai NEXO	ZLJPSX	819
+Mercedes-Benz Mercedes-AMG A-Class	YTOZZP	822
+Volkswagen Golf	RBMGOB	825
+Mercedes-Benz Mercedes-AMG GT	JVVHUU	828
+Jaguar I-PACE	RFPFHP	831
+Cadillac LYRIQ	LUEMWO	834
+Nissan Pathfinder	TUPIMY	837
+Volkswagen ID.4	KQDMIC	840
+Honda Civic	PUCKGP	843
+Jeep Cherokee	OVASRW	846
+Ford Fusion	CQHRYC	849
+Toyota GR86	BKOWCP	852
+Mercedes-Benz Mercedes-EQ EQB	SYCYVK	855
+GMC Acadia	PSHISN	858
+Toyota Mirai	LJESSD	901
+Subaru Crosstrek	APRDZX	904
+Lexus LX	CYYTMQ	907
+Mercedes-Benz Mercedes-AMG SL	ZRQBXK	910
+Mercedes-Benz Metris WORKER Passenger	NTFJBT	913
+Audi S4	XKYTJZ	916
+Genesis GV60	ENNCHB	919
+Tesla Model Y	TRQFLS	922
+Ford Escape	IZYGEF	925
+Toyota Camry Hybrid	XIQOSV	928
+Audi Q3	TXMYOD	931
+Cadillac CT6	PUNMSA	934
+INFINITI QX60	DOSZMF	937
+Mercedes-Benz S-Class	BSJQKV	940
+Audi R8	SLSCLU	943
+Ford Fusion Plug-in Hybrid	GABHWJ	946
+Subaru BRZ	VEDRDK	949
+Toyota Highlander Hybrid	NKWPME	952
+Audi S7	QGPYLD	955
+Jeep Grand Cherokee L	CJPFUN	958
+Jeep Renegade	IXLQUY	1001
+Mitsubishi Outlander PHEV	EHAHLM	1004
+Tesla Model X	NGQRBB	1007
+GMC Hummer EV SUV	GIVPET	1010
+Audi A5	PLMENX	1013
+GMC Hummer EV	NSAROC	1016
+Mercedes-Benz Mercedes-AMG C-Class	LTTQPY	1019
+Bentley Mulsanne	AWIDZX	1022
+Toyota Corolla Hybrid	ZONGXG	1025
+Land Rover Range Rover Sport	DILFNK	1028
+Ford F150 SuperCrew Cab	CZNYNX	1031
+Buick Regal TourX	ZBFLGV	1034
+Honda Passport	EUJTLS	1037
+Bentley Continental GT	UZBICX	1040
+Hyundai Elantra Hybrid	XUJRNP	1043
+Audi e-tron S	QUESIF	1046
+Lincoln Continental	OGQXEY	1049
+Audi e-tron S Sportback	WEVOZX	1052
+Audi A7	VMQZQD	1055
+Chevrolet Camaro	PQMQYX	1058
+GMC Canyon Crew Cab	KKVAXB	1101
+Ford F450 Super Duty Regular Cab	ZJVSOW	1104
+Honda Pilot	PKLPRL	1107
+MINI Countryman	GCPTZT	1110
+Rolls-Royce Dawn	KHTXVE	1113
+Volvo S60	HNQWNB	1116
+Nissan NV200	CPHYJT	1119
+Hyundai Elantra GT	PQLZVX	1122
+Honda Clarity Fuel Cell	TNIPFB	1125
+Ford F150 Lightning	KDWQWF	1128
+Nissan Frontier Crew Cab	DATRWH	1131
+Land Rover Discovery	AOOZXU	1134
+Ford F250 Super Duty Super Cab	SMBSWT	1137
+Hyundai IONIQ 5	WSUEYG	1140
+Chevrolet Blazer	ZNFURG	1143
+Honda Clarity Plug-in Hybrid	RHYFYJ	1146
+Honda HR-V	JGHPCV	1149
+Audi A4	KFRLMI	1152
+Genesis GV70	HIABQT	1155
+Nissan Altima	QUJLQB	1158
+Mercedes-Benz Metris Cargo	EMSCTV	1201
+Chevrolet Malibu	ZKHPBK	1204
+Kia K900	QUMTNJ	1207
+Nissan Frontier King Cab	VTOQJZ	1210
+Lexus NX	WKSPXZ	1213
+Buick Enclave	IQIPLU	1216
+Mercedes-Benz Mercedes-AMG S-Class	EBREGY	1219
+Mercedes-Benz Mercedes-AMG CLA	XUQXEP	1222
+Volkswagen Golf R	HYWAXA	1225
+Audi Q5 Sportback	OJNZJU	1228
+Kia Niro Plug-in Hybrid	CMVKYQ	1231
+Hyundai Elantra	TCWRRW	1234
+MAZDA CX-90	ICJFQL	1237
+Subaru Forester	FOPBKS	1240
+Toyota Avalon Hybrid	RDGNWM	1243
+Ferrari F8	XTJODD	1246
+BMW M2	RSOHUR	1249
+Mitsubishi Outlander	JCVOKO	1252
+Audi S5	NOPGAT	1255
+Aston Martin DB11	YGURAW	1258
+INFINITI Q50	ABFEHC	1301
+Nissan NV1500 Cargo	GGOLOT	1304
+Rivian R1S	ITKJAC	1307
+Mercedes-Benz Mercedes-AMG CLS	SHSIJS	1310
+Toyota RAV4	NUVSUA	1313
+Acura Integra	QEPWOC	1316
+Ford Bronco Sport	TQXTFE	1319
+Tesla Cybertruck	LOOTFK	1322
+Kia EV6	MJKVQS	1325
+Lincoln Aviator	OYPSBW	1328
+Lamborghini Huracan	DXVWOH	1331
+Chevrolet Express 3500 Passenger	KCVMNR	1334
+Audi A6 allroad	RIAWMH	1337
+Honda Prologue	JQBDSD	1340
+Volkswagen Atlas	JKFWJL	1343
+Audi A4 allroad	GRZFIV	1346
+Audi Q8	QONMGN	1349
+INFINITI Q60	WKKMVD	1352
+Lexus RC	WPRIDM	1355
+Lexus ES	RVWLYD	1358
+BMW M8	JNSSAZ	1401
+Land Rover Discovery Sport	GYIIIQ	1404
+BMW M3	BOHXMV	1407
+Audi RS Q8	ELPTXO	1410
+Genesis G90	QDVGYI	1413
+Ford Expedition	HDQELY	1416
+Honda Fit	SUZKXP	1419
+Volkswagen Golf GTI	BFLHZF	1422
+Ferrari GTC4Lusso	HZSNWD	1425
+Subaru Outback	CXGCXW	1428
+Acura MDX Sport Hybrid	PXHUUO	1431
+Lincoln Nautilus	RBOGIL	1434
+Mercedes-Benz CLS	TXQLBU	1437
+Volkswagen Passat	JEWRHZ	1444
+Ford Explorer	SXRNYY	1451
+MINI Hardtop 2 Door	IVNOAD	1458
+Lincoln Corsair	GZTGRD	1505
+Ram ProMaster City	JJIZHW	1512
+Ford EcoSport	KFAPAE	1519
+Audi RS 7	GUTMBU	1526
+Ram ProMaster Window Van	NMIZOJ	1533
+Aston Martin DBS Superleggera	NETZTV	1540
+Ford Mustang MACH-E	WMGZGN	1547
+Genesis G80	OSWOKR	1554
+Mercedes-Benz GLC Coupe	LMLOAF	1601
+Hyundai Santa Fe	KDYASF	1608
+Honda Accord Hybrid	NTGUCV	1615
+Nissan NV3500 HD Passenger	QEMHKL	1622
+Buick Regal Sportback	DLXWPR	1629
+Chevrolet Express 3500 Cargo	TKPFOZ	1636
+Audi A3	VGKVQX	1643
+GMC Savana 2500 Cargo	YURQZW	1650
+Toyota Prius	SOCSNH	1657
+Kia Forte	PTGHKZ	1704
+Chevrolet Bolt EUV	TIXGFO	1711
+Mercedes-Benz GLS	PYJBOH	1718
+Mercedes-Benz GLB	YSGGVU	1725
+Hyundai Ioniq Electric	QUDDIZ	1732
+MINI Clubman	IJRVBI	1739
+Toyota Corolla Cross	RAFHUE	1746
+Dodge Charger	LFLNFU	1753
+Nissan NV2500 HD Cargo	NZVFMW	1800
+Volkswagen Jetta GLI	IWIVFC	1807
+Mercedes-Benz Mercedes-AMG G-Class	GFBQAZ	1814
+Mercedes-Benz Mercedes-AMG E-Class	GPEQHI	1821
+Land Rover Defender 110	DBRIHH	1828
+Audi S6	EBCBDW	1835
+Audi RS 3	ROBQWE	1842
+Hyundai Palisade	GFKAPL	1849
+Volkswagen ID.Buzz	RKUNQL	1856
+INFINITI QX80	LZFHMF	1903
+Honda CR-V	FHCJGC	1910
+Chevrolet Equinox	GCATHG	1917
+Ford F150 Regular Cab	DWRNKJ	1924
+Lincoln Navigator L	EKETUO	1931
+Acura MDX	PHSJMA	1938
+Hyundai Kona	PKHVKR	1945
+Dodge Durango	ZMDKSI	1952
+MAZDA MAZDA6	SDNIJF	1959
+Mercedes-Benz Mercedes-AMG GLS	SZZQEO	2006
+Volkswagen Arteon	AIUXRA	2013
+Mercedes-Benz GLE	LBLDUB	2020
+Chevrolet Express 2500 Cargo	XQAUSU	2027
+Lexus LC	VPPDLT	2034
+Audi Q7	TFPWIX	2041
+Acura RLX Sport Hybrid	QHTKOF	2048
+Genesis GV80	HSTWIN	2055
+Nissan LEAF	LEVFEW	2102
+Nissan Maxima	YUXXJM	2109
+Ford Mustang	NGYQNH	2116
+Porsche Cayenne Coupe	ITUONP	2123
+Nissan Rogue Sport	RVSHQP	2130
+Chevrolet Express 2500 Passenger	ULJRCN	2137
+Chrysler Pacifica	UQSFNS	2144
+Chevrolet Corvette	PLKHRV	2151
+Ford F350 Super Duty Super Cab	RGADLT	2158
+Cadillac Escalade	GRZTXQ	2205
+Acura NSX	VDIFYV	2212
+Acura ILX	VARNZG	2219
+Mercedes-Benz Mercedes-AMG SLC	OUOETE	2226
+Land Rover Range Rover Velar	TDGHMG	2233
+Rivian R1T	DSSHYL	2240
+MAZDA CX-3	WNBCKC	2247
+Mercedes-Benz Mercedes-AMG GLC Coupe	MWOQIX	2254
+MINI Convertible	JCYQAH	2301
+Hyundai Santa Fe Hybrid	EJFOCP	2308
+Acura RLX	QCCXNI	2315
+Mercedes-Benz Mercedes-AMG GLE Coupe	NMBHHM	2322
+Mitsubishi Outlander Sport	DHUEXU	2329
+Toyota RAV4 Prime	SXGNGT	2336
+Mercedes-Benz Metris WORKER Cargo	RAMTKQ	2343
+BMW i4	APPLUX	2350
+Audi RS 6	FVXMKC	2357
+X		

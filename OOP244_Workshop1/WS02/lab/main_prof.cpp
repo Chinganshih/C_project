@@ -32,6 +32,7 @@ point to the end of the main function and press "F5" to compile and run.
 
 */
 #include "Car.h"
+#include <crtdbg.h>
 using namespace sdds;
 int main(){
    Car C;

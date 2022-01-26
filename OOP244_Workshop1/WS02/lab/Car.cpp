@@ -7,17 +7,19 @@
 //-----------------------------------------------------------*/
 
 #define _CRT_SECURE_NO_WARNINGS
+#define _CRTDBG_MAP_ALLOC //to get more details
 #include <cstdio>
 #include <iostream>
 #include <iomanip>
 #include <cstring>
+#include <fstream>
 #include "cStrTools.h"
 #include "Car.h"
 
 using namespace std;
 
 namespace sdds {
-	
+
 	/*
 	Car Pointer; A Car pointer to hold the dynamic array of cars(We call this "The Car Pointer" in this text)
 	Allocation size; an integer to hold the memory allocationand expansion size when needed
@@ -46,58 +48,71 @@ namespace sdds {
 
 	//Deletes the allocated memory pointed by the makeand model pointer in the Car structure, then set it to nullptr.
 	void deallocate(Car& C) {
+		
 		delete[] C.makeModel;
 		C.makeModel = nullptr;
+
 	}
 
 	bool read(Car& C) {
 		bool flag = 1;
-		int i=0;
+		int i = numberOfCar;
 		char input[MAX_MAKEMODEL];
-		
-		for ( i = 0; i < carArrSize && flag; i++)
-		{
-			read(input, MAX_MAKEMODEL, ',');
-			if (strCmp(input, "X"))
-			{
-				car[i].makeModel = new char[strLen(input) + 1];
-				strCpy(car[i].makeModel, input);
-				read(car[i].license, MAX_LICENSE - 1, ',');
-				cin >> car[i].time;
-				numberOfCar++;
-			}
-			else
-			{
-				flag = 0;
-			}
-		}
 
+		
+		read(input, MAX_MAKEMODEL, ',');
+
+		if (strCmp(input, "X") && numberOfCar != carArrSize)
+		{
+			car[i].makeModel = new char[strLen(input) + 1];
+			strCpy(car[i].makeModel, input);
+			read(car[i].license, MAX_LICENSE - 1, ',');
+			cin >> car[i].time;
+			numberOfCar++;
+		}
+		else
+		{
+			flag = 0;
+		}
+		
 		return flag;
 	}
 
 	void print(const Car& C) {
-		int i;
-
-		for ( i = 0; i < carArrSize-1; i++)
-		{
-			cout << (&C)[i].time << ": " << (&C)[i].makeModel << ',' << (&C)[i].license << endl;
-		}
+		
+		cout << C.time << ": " << C.makeModel << ',' << C.license << endl;
+		
 	}
 
 	void record(const Car& C) {
-		Car* newC = nullptr;
-		
-		if (numberOfCar == carArrSize) {
 
-			newC = new Car[numberOfCar + allocation];
-			memcpy(newC, &C, sizeof(C));
-			delete[] C.makeModel;
+		Car* newC = nullptr;
+		int i;
+
+		if (numberOfCar == carArrSize) {
+			carArrSize = numberOfCar + allocation;
+			newC = new Car[carArrSize];
+			for ( i = 0; i < numberOfCar; i++)
+			{
+				newC[i].makeModel = car[i].makeModel;
+				strCpy(newC[i].license, car[i].license);
+				newC[i].time = car[i].time;
+			}
+
+			delete[] car;
+			car = newC;
 		}
-		numberOfCar++;
+		
 	}
 
 	void endOfDay() {
-		print(*car);
-		deallocate(*car);
+		int i;
+		for ( i = 0; i < numberOfCar; i++)
+		{
+			print(car[i]);
+			deallocate(car[i]);
+		}
+		delete[] car;
+		car = nullptr;
 	}
 }
