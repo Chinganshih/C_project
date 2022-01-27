@@ -1,5 +1,5 @@
 ///* ------------------------------------------------------
-//Workshop 2 part 1
+//Workshop 2 part 2
 //Name   : chinganshih
 //ID     : 148221195
 //Email  : cshih9@myseneca.ca
@@ -43,10 +43,11 @@ namespace sdds {
 	}
 
 	bool read(DNA& D, std::vector<std::vector<string>>& content) {
-		int i= numberOfDNA, intid;
+		int i= numberOfDNA, intid, size=0;
 		bool temp = false;
 
-		if (numberOfDNA != dnaArrSize && i < content.size())
+		size = content.size();
+		if (numberOfDNA != dnaArrSize && i < size)
 		{
 			intid = stoi(content[i][0]);
 			dna[i].id = intid;
@@ -61,7 +62,6 @@ namespace sdds {
 
 	void record(const DNA& D) {
 		DNA* newD = nullptr;
-		char* dnastrand;
 		int i;
 
 		if (numberOfDNA == dnaArrSize) {
@@ -71,13 +71,14 @@ namespace sdds {
 			for (i = 0; i < numberOfDNA; i++)
 			{
 				newD[i].id = dna[i].id;
-				dnastrand = dna[i].DNAstrand;
-				newD[i].DNAstrand = new char[strLen(dnastrand) + 1];
-				strCpy(newD[i].DNAstrand, dna[i].DNAstrand);
+				newD[i].DNAstrand = dna[i].DNAstrand;
+				////newD[i].DNAstrand = new char[strLen(dnastrand) + 1];
+				//strCpy(newD[i].DNAstrand, dna[i].DNAstrand);
 			}
 			
 			delete[] dna;
 			dna = newD;
+
 		}
 
 	}
@@ -85,7 +86,6 @@ namespace sdds {
 	//It will try to open the file and initialize any requirements needed for the application.Returns true 
 	//if the file is opened successfullyand returns false it fails to open the file.
 	bool beginSearch(const char* filename) {
-		int i,j, intid;
 		bool isopen;
 		string line, word;
 		vector<string> row;
@@ -112,6 +112,7 @@ namespace sdds {
 			while (read(*dna, content)) {
 				record(*dna);
 			}	
+			content.clear();
 			isopen = true;
 			cout << "DNA search program" << endl;
 			fp.close();
@@ -149,9 +150,9 @@ namespace sdds {
 					for (j = 0; j < numberOfDNA; j++)
 					{
 						reNew[j].id = match[i].id;
-						dnastrand = match[i].DNAstrand;
-						reNew[j].DNAstrand = new char[strLen(dnastrand) + 1];
-						strCpy(reNew[j].DNAstrand, match[j].DNAstrand);
+						reNew[j].DNAstrand = match[i].DNAstrand;
+						/*reNew[j].DNAstrand = new char[strLen(dnastrand) + 1];
+						strCpy(reNew[j].DNAstrand, match[j].DNAstrand);*/
 					}
 
 					delete[] match;
@@ -191,6 +192,7 @@ namespace sdds {
 	//Displays the dynamic DNA records in the following format.
 	void displayMatches() {
 		int i;
+		cout << numberOfMatch << " matches found:" << endl;
 
 		for (i = 0; i < numberOfMatch; i++)
 		{
