@@ -20,6 +20,7 @@ int main() {
    char filename[256];
    cout << "Enter DNA data file name: ";
    cin >> filename;
+
    if (beginSearch(filename)) {
       while (!done) {
          cout << "Enter a DNA squence (max 100 chars)" << endl << "> ";
@@ -28,7 +29,7 @@ int main() {
             done = true;
          }
          else {
-            if (read(dna)) {
+             if (read(dna)) {
                sort();
                displayMatches();
                deallocate();

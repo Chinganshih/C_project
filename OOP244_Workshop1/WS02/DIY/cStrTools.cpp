@@ -84,7 +84,7 @@ namespace sdds {
     // reads a cString upto maxSize characters or upto the delimiter character,
     // whichever comes first (skipping leading white space characters but accpting
     // spaces in the cString)
-    void read(char* cString, unsigned int maxSize, char delimiter) {
+    void read(char* cString, unsigned int maxSize, char delimiter ) {
         char ch = 0;
         unsigned int i = 0;
         // skipping leading white space chars

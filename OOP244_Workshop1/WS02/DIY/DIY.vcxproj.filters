@@ -34,7 +34,7 @@
     <ClInclude Include="cStrTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DAN.h">
+    <ClInclude Include="DNA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

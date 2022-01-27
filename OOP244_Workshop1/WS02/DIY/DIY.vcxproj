@@ -147,7 +147,7 @@
     <None Include="dna.csv" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DAN.h" />
+    <ClInclude Include="DNA.h" />
     <ClInclude Include="cStrTools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
