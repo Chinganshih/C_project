@@ -72,8 +72,6 @@ namespace sdds {
 			{
 				newD[i].id = dna[i].id;
 				newD[i].DNAstrand = dna[i].DNAstrand;
-				////newD[i].DNAstrand = new char[strLen(dnastrand) + 1];
-				//strCpy(newD[i].DNAstrand, dna[i].DNAstrand);
 			}
 			
 			delete[] dna;
@@ -151,8 +149,6 @@ namespace sdds {
 					{
 						reNew[j].id = match[i].id;
 						reNew[j].DNAstrand = match[i].DNAstrand;
-						/*reNew[j].DNAstrand = new char[strLen(dnastrand) + 1];
-						strCpy(reNew[j].DNAstrand, match[j].DNAstrand);*/
 					}
 
 					delete[] match;
