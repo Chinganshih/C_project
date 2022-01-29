@@ -139,8 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Train.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Train.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Train.h" />
