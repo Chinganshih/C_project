@@ -9,6 +9,7 @@
 #include "Train.h"
 #include <iostream>
 #include <string.h>
+#include <iomanip>
 using namespace std;
 
 namespace sdds {
@@ -18,9 +19,6 @@ namespace sdds {
 		memset(name, 0, MAX_NAME_LEN);
 		people = 0;
 		speed = 0;
-	}
-
-	Train::~Train() {
 	}
 
 	void Train::set(const char* n, int p, double s) {
@@ -55,7 +53,7 @@ namespace sdds {
 	
 	//The member function getSpeed : double getSpeed() const; This query returns the speed of a train.
 	double Train::getSpeed() const {
-
+		cout << setprecision(2) << fixed;
 		return this->speed;
 	}
 
