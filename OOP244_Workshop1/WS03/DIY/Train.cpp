@@ -13,8 +13,6 @@
 using namespace std;
 
 namespace sdds {
-	Train train[7];
-
 	Train::Train() {
 		memset(name, 0, MAX_NAME_LEN);
 		people = 0;
