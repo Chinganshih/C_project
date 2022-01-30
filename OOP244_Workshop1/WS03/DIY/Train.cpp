@@ -1,5 +1,5 @@
 ///* ------------------------------------------------------
-//Workshop 3 part 1
+//Workshop 3 part 2
 //Name   : chinganshih
 //ID     : 148221195
 //Email  : cshih9@myseneca.ca
@@ -18,7 +18,7 @@ namespace sdds {
 	Train::Train() {
 		memset(name, 0, MAX_NAME_LEN);
 		people = 0;
-		speed = 0;
+		speed = 0.00;
 	}
 
 	void Train::set(const char* n, int p, double s) {
@@ -31,7 +31,7 @@ namespace sdds {
 		else {
 			memset(name, 0, MAX_NAME_LEN);
 			people = 0;
-			speed = 0;
+			speed = 0.00;
 		}
 
 	}
@@ -89,23 +89,76 @@ namespace sdds {
 	//The value of the input parameter is used to increase or decrease the number of people on a train.
 	//It must make sure that the number of people will not be negative or exceed MAX_PEOPLE.
 	//It returns true if the operation succeeds.It returns false if the Train object is in a safe empty state
-	bool Train::loadPeople(int p) const {
-		
+	bool Train::loadPeople(int p)  {
+		int newpeople = p + this->people;
+		bool succeed = false;
 
+		if (newpeople > MAX_PEOPLE) {
+			this->people = MAX_PEOPLE;
+		}
+		else if (newpeople < 0) {
+			this->people = 0;
+		}
+		else {
+			this->people = newpeople;
+			succeed = true;
+		}
 
+		return succeed;
 	}
 
 	//The member function changeSpeed changes the speed of a train.
 	//The value of the input parameter is used to increase or decrease the speed of a train.
 	//It must make sure that the speed of a train will not be negative or exceed MAX_SPEED.
 	//It returns true if the operation succeeds.It returns false if the Train object is in a safe empty state.
-	bool Train::changeSpeed(int s) const {
+	bool Train::changeSpeed(int s)  {
+		double newspeed = s + this->speed;
+		bool succeed = false;
 
+		if (newspeed > MAX_SPEED) {
+			this->speed = MAX_SPEED;
+		}
+		else if(newspeed < 0)
+		{
+			this->speed = 0;
+		}
+		else
+		{
+			this->speed = newspeed;
+			succeed = true;
+		}
+		cout << setprecision(2) << fixed;
+		return succeed;
 	}
+
+	//A global function transfer moves as many passengers as possible from the second Train to the first Train.
+	//It has two parameters(first, second) that reference two Train objects.
+	//The function must make sure that the number of people on both Train objects will not be negative or exceed MAX_PEOPLE.
+	//It returns the number of people that have been moved to the first Train
+	//It returns - 1 if any of the Train objects is in a safe empty state.
 
 	int transfer(Train& frist, Train& second) {
+		int transPeople = frist.getNumberOfPeople() + second.getNumberOfPeople();
+		int changeOfPeople;
+
+		if (transPeople > MAX_PEOPLE)
+		{
+			changeOfPeople = MAX_PEOPLE - frist.getNumberOfPeople();
+			frist.loadPeople(changeOfPeople);
+			second.loadPeople(-changeOfPeople);
+		}
+		else if (transPeople < 0) {
+			frist.loadPeople(0);
+			second.loadPeople(0);
+		}
+		else if(frist.isSafeEmpty() || second.isSafeEmpty()){
+			transPeople = -1;
+		}
+
+		return transPeople;
+	}
+				
+	Train::~Train() {
 
 	}
-
-
 }

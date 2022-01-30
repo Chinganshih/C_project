@@ -21,18 +21,15 @@ namespace sdds {
 	It validates the data values receivedand uses these data values to set the respective data members, only if all of them are valid.*/
 	public:
 		Train();
+		~Train();
 		void set(const char* n, int p, double s);
 		int getNumberOfPeople() const;
 		const char* getName() const;
 		double getSpeed() const;
 		bool isSafeEmpty() const;
 		void display() const;
-		bool loadPeople(int p) const;
-		bool changeSpeed(int s) const;
-	};
-
-	class Derived : public Train {
-
+		bool loadPeople(int p);
+		bool changeSpeed(int s);
 	};
 
 	int transfer(Train& frist, Train& second);
