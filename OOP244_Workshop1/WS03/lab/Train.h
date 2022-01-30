@@ -21,7 +21,6 @@ namespace sdds {
 	It validates the data values receivedand uses these data values to set the respective data members, only if all of them are valid.*/
 	public:
 		Train();
-		~Train();
 		void set(const char* n, int p, double s);
 		int getNumberOfPeople() const;
 		const char* getName() const;

@@ -87,5 +87,27 @@ namespace sdds {
 		
 	}
 
-	
+	//The member function loadPeople changes the number of people on a train.
+	//The value of the input parameter is used to increase or decrease the number of people on a train.
+	//It must make sure that the number of people will not be negative or exceed MAX_PEOPLE.
+	//It returns true if the operation succeeds.It returns false if the Train object is in a safe empty state
+	bool Train::loadPeople(int p) const {
+		
+
+
+	}
+
+	//The member function changeSpeed changes the speed of a train.
+	//The value of the input parameter is used to increase or decrease the speed of a train.
+	//It must make sure that the speed of a train will not be negative or exceed MAX_SPEED.
+	//It returns true if the operation succeeds.It returns false if the Train object is in a safe empty state.
+	bool Train::changeSpeed(int s) const {
+
+	}
+
+	int transfer(Train& frist, Train& second) {
+
+	}
+
+
 }
