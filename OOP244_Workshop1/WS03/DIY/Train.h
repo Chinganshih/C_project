@@ -1,11 +1,12 @@
 #pragma once
 #ifndef TRAIN_H_
 #define TRAIN_H_
+#define MAX_NAME_LEN  21
+#define MAX_PEOPLE  1000
+#define MAX_SPEED  320
 
 namespace sdds {
-	const int MAX_NAME_LEN = 21;
-	const int MAX_PEOPLE = 1000;
-	const int MAX_SPEED = 320;
+
 
 	/*Declare three private data members.Declare an array to hold the name of a train, not exceeding MAX_NAME_LEN characters.
 	Declare an integer variable for the number of people on a train.
