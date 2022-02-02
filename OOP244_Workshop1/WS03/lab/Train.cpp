@@ -22,16 +22,16 @@ namespace sdds {
 
 
 	void Train::set(const char* n, int p, double s) {
-		if (n != nullptr && strlen(n) > 0 && p >=0 && s > 0 && s <= MAX_SPEED)
+		if (n != nullptr && strlen(n) > 0 && (p >=0 && p <= MAX_PEOPLE) && (s >= 0 && s <= MAX_SPEED))
 		{
-			strcpy(name,n);
-			people = p;
-			speed = s;
+			strcpy(this->name,n);
+			this->people = p;
+			this->speed = s;
 		}
 		else {
-			memset(name, 0, MAX_NAME_LEN);
-			people = 0;
-			speed = 0.00;
+			this->name[0] = '\0';
+			this->people = -1;
+			this->speed = -1;
 		}
 
 	}
@@ -43,11 +43,6 @@ namespace sdds {
 
 	//The member function getName : const char* getName() const; This query returns the name of a train.
 	const char* Train::getName() const {
-
-		if (this->isSafeEmpty())
-		{
-			return "Seneca Express";
-		}
 		return this->name;
 	}
 	

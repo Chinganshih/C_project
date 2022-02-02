@@ -2,21 +2,20 @@
 Workshop 3 part 1
 Module: N/A
 Filename: main.cpp
-Version 1
-Author: Peter Liu   12/29/2021
+Version 1.1
+Author: Peter Liu   1/29/2022
 Original Author: Cornel Barna
 Revision History
 -----------------------------------------------------------
-Date       Reason
+Date          Reason
+31/01/2022    Minor fixed, use diff to see the changes
 -----------------------------------------------------------*/
-
 
 #include <iostream>
 #include <cstring>
 #include <iomanip>
-#include "Train.h"
-
 using namespace std;
+#include "Train.h"
 using namespace sdds;
 
 int main() {
@@ -28,7 +27,7 @@ int main() {
 	trains[2].set("VIA Rail Abitibi", -100, 123.45);
 	trains[3].set("VIA Rail Abitibi", 100, -123.45);
 	trains[4].set("VIA Rail Abitibi", 100, 5000);
-	trains[5].set("Seneca Express", 0, 0);
+	trains[5].set("Seneca Express", -1, -1);
 	trains[6].set("VIA Rail Abitibi", 333, 115.95);
 
 	cout << "----------------------------------------" << endl;
@@ -56,16 +55,9 @@ int main() {
 	cout << "3. Testing the member functions." << endl;
 	cout << "----------------------------------------" << endl;
 
-	Train t1, t2;
+	Train t2;
 
-	t1.set(nullptr, -1, -1);
 	t2.set("Bullet Train", 100, 245.95);
-
-	cout << t1.getNumberOfPeople()
-		<< ','
-		<< t1.getName()
-		<< ','
-		<< t1.getSpeed() << endl;
 
 	cout << t2.getNumberOfPeople()
 		<< ','
