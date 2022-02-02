@@ -33,7 +33,7 @@ int main() {
 	trains[2].changeSpeed(-30);
 	trains[1].display();
 	trains[2].display();
-
+	
 	trains[1].changeSpeed(500);
 	trains[2].changeSpeed(-600);
 	trains[1].display();

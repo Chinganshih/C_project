@@ -13,23 +13,23 @@
 using namespace std;
 
 namespace sdds {
+
 	Train::Train() {
-		memset(name, 0, MAX_NAME_LEN);
-		people = 0;
-		speed = 0.00;
+		//calls the set function to reuse the code
+		this->set(nullptr, -1, -1.0f);
 	}
 
 	void Train::set(const char* n, int p, double s) {
-		if (n != nullptr && strlen(n) > 0 && p >=0 && s > 0 && s <= MAX_SPEED)
+		if (n != nullptr && strlen(n) > 0 && (p >= 0 && p <= MAX_PEOPLE) && (s >= 0 && s <= MAX_SPEED))
 		{
-			strcpy(name,n);
-			people = p;
-			speed = s;
+			strcpy(this->name, n);
+			this->people = p;
+			this->speed = s;
 		}
 		else {
-			memset(name, 0, MAX_NAME_LEN);
-			people = 0;
-			speed = 0.00;
+			this->name[0] = '\0';
+			this->people = -1;
+			this->speed = -1;
 		}
 
 	}
@@ -41,11 +41,6 @@ namespace sdds {
 
 	//The member function getName : const char* getName() const; This query returns the name of a train.
 	const char* Train::getName() const {
-
-		if (this->isSafeEmpty())
-		{
-			return "Seneca Express";
-		}
 		return this->name;
 	}
 	
@@ -57,13 +52,7 @@ namespace sdds {
 
 	//The member function isSafeEmpty : bool isSafeEmpty() const; This query returns true if the Train object is in a safe empty state; false otherwise.
 	bool Train::isSafeEmpty() const {
-		bool empty = true;
-
-		if (name[0] != '\0')
-		{ 
-			empty = false;
-		}
-		return empty;
+		return (this->name[0] == '\0' && this->speed == -1 && this->people == -1);
 	}
 
 	//The member function display : void display() const; 
