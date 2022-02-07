@@ -1,3 +1,11 @@
+//* ------------------------------------------------------
+//Workshop 4 part 1
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "CarInventory.h"
 #include <cstring>
@@ -23,6 +31,7 @@ namespace sdds {
 	//The default constructor will initialize the member variables by calling the resetInfo() method(the details of this method will be provided in the Private Member section.
 	CarInventory::CarInventory(const char* type, const char* brand, const char* model, int year, int code, double price) {
 		if (type != nullptr && brand != nullptr && model != nullptr && year >= 1990 && (code > 99 || code <1000) && price >0) {
+			this->resetInfo();
 			this->setInfo(type, brand, model, year, code, price);
 		}
 		else {
@@ -33,11 +42,13 @@ namespace sdds {
 
 	//This destructor should deallocate the dynamically allocated memory in type, brand, and model.
 	CarInventory:: ~CarInventory() {
-		if (m_type != nullptr && m_brand != nullptr && m_model != nullptr) {
-			delete[] this->m_type;
-			delete[] this->m_brand;
-			delete[] this->m_model;
-		}
+		delete[] m_type;
+		delete[] m_brand;
+		delete[] m_model;
+		
+		m_type = nullptr;
+		m_brand = nullptr;
+		m_model = nullptr;
 		
 	}
 
@@ -45,13 +56,15 @@ namespace sdds {
 	//Note: this function does not have any default values for its arguments.
 	//In the end, it will return the reference of the current object.
 	CarInventory& CarInventory::setInfo(const char* type, const char* brand, const char* model, int year, int code, double price) {
-		this->resetInfo();
+		/*this->resetInfo(); ----> cause error in 1 blocks are definitely lost in loss record 1 of 6*/
 		delete[] this->m_type;
 		delete[] this->m_brand;
 		delete[] this->m_model;
+		
 		this->m_type = new char[strlen(type)+1];
 		this->m_brand = new char[strlen(brand) + 1];
 		this->m_model = new char[strlen(model) + 1];
+
 		strcpy(this->m_type, type);
 		strcpy(this->m_brand, brand);
 		strcpy(this->m_model, model);
