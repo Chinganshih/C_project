@@ -49,9 +49,9 @@ namespace sdds {
 		delete[] this->m_type;
 		delete[] this->m_brand;
 		delete[] this->m_model;
-		this->m_type = new char(strlen(type) + 1);
-		this->m_brand = new char(strlen(brand) + 1);
-		this->m_model = new char(strlen(model) + 1);
+		this->m_type = new char[strlen(type)+1];
+		this->m_brand = new char[strlen(brand) + 1];
+		this->m_model = new char[strlen(model) + 1];
 		strcpy(this->m_type, type);
 		strcpy(this->m_brand, brand);
 		strcpy(this->m_model, model);

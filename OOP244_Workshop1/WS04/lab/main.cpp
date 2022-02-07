@@ -27,6 +27,7 @@ int main()
 		{"Sedan", "BMW", "M550i", 2022, 101, 91000},
 		{"Truck", "Tesla", "Cybertruck", 2021, 102, 65000},
 		{"Sedan", "BMW", "M550i"}
+		
 	};
 	
 	if (cars[2].setInfo("SUV", "Volvo", "XC90", 2019, 109, 80000).isValid()) {
