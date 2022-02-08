@@ -1,7 +1,16 @@
+//* ------------------------------------------------------
+//Workshop 4 part 2
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "Robot.h"
 #include <iostream>
 #include <iomanip>
+#include <cstring>
 
 using namespace std;
 namespace sdds {
@@ -105,8 +114,8 @@ namespace sdds {
 	}
 
 	void Robot::title() const {
-		cout << setw(55) << "------ Robot Control Room -----" << endl;
-		cout << setw(60) << "---------------------------------------" << endl;
+		cout << "                        ------ Robot Control Room -----" << endl;
+		cout << "                    ---------------------------------------" << endl;
 		cout << "| Robot ID   | Location        | Weight |  Width | Height |  Speed | Deployed |" << endl;
 		cout << "|------------+-----------------+--------+--------+--------+--------+----------|" << endl;
 	}
@@ -160,12 +169,13 @@ namespace sdds {
 		cout << "| Robot ID   | Location        | Weight |  Width | Height |  Speed | Deployed |" << endl;
 		cout << "|------------+-----------------+--------+--------+--------+--------+----------|" << endl;
 		robot[fastest].display();
+		cout << "|=============================================================================|" << endl;
 	}
 
 	void summary(const int inValid) {
 		cout << "|=============================================================================|" << endl;
 		cout << "| SUMMARY:                                                                    |" << endl;
 		cout << "| " << inValid << "  robots are deployed.                                                     |" << endl;
-		cout << "|=============================================================================|" << endl;
+		
 	}
 }
