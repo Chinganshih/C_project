@@ -12,6 +12,7 @@ F.S.	     04/02/2022     Added covered topics and simplifed.
 -----------------------------------------------------------*/
 #include <iostream>
 #include "Robot.h"
+#include "main.h"
 
 using namespace std;
 using namespace sdds;
