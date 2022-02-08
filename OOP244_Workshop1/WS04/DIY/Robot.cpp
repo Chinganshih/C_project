@@ -6,6 +6,8 @@
 using namespace std;
 namespace sdds {
 
+	int numberOfBroken = 0;
+
 	//Default constructor for a robot with no information to set the robot into an empty state
 	Robot::Robot()
 	{
@@ -34,7 +36,7 @@ namespace sdds {
 	//Constructor with 7 arguments to initialize the robot information in the following order :
 	//name, location, weight, width, height, speed, deployment
 	Robot::Robot(const char* name, const char* location, double weight, double width, double height, double Speed, bool deployed) {
-		if (this->isValid()) {
+		if (name != nullptr && location != nullptr) {
 			this->resetRobot();
 			this->set(name, location, weight, width, height, Speed, deployed);
 		}
@@ -59,17 +61,20 @@ namespace sdds {
 		this->Speed = Speed;
 		this->deployed = deployed;
 
+		this->setLocation(location);
+		this->setDeployed(deployed);
 		return *this;
 	}
 
 	//to set the robot location
-	const char* Robot::setLocation() {
+	const char* Robot::setLocation(const char* location) {
+		strcpy(this->location, location);
 		return this->location;
 	}
 
 	//to set the robot deployment status(true or false)
-	bool Robot::setDeployed() {
-
+	bool Robot::setDeployed(bool deployed) {
+		this->deployed = deployed;
 		return this->deployed;
 	}
 
@@ -107,30 +112,34 @@ namespace sdds {
 	}
 
 	void Robot::display() const{
-		char deployed[3] = "";
+		char deployed[4] = "";
 
 		(this->deployed) ? strcpy(deployed, "YES") : strcpy(deployed, "NO");
-		if(this->isValid()) printf("| %-11s| %-16s| %6.2lf | %6.2lf | %6.2lf | %6.2lf | %-9s|\n", this->name, this->location, this->weight, this->width, this->height, this->Speed, deployed);
-
+		printf("| %-11s| %-16s| %6.1lf | %6.1lf | %6.1lf | %6.1lf | %-9s|\n", this->name, this->location, this->weight, this->width, this->height, this->Speed, deployed);
+		
 	}
 
 	int conrtolRooomReport(const Robot robot[], int num_robots) {
-		int i, inValid=0;
+		int i, inValid =-1, deployed=0;
 		robot[num_robots].title();
 
 		for ( i = 0; i < num_robots; i++)
 		{
 			if (!robot[i].isValid()) {
+				numberOfBroken++;
 				inValid++;
-				robot[i].display();
-				return inValid;
+				return i;
 			}
-		}
+			else
+			{
+				robot[i].display();
+			}
 
-		if (!inValid) {
-			inValid = -1;
+			if (robot[i].isDeployed()) deployed++;
 		}
-		else summary(inValid);
+		
+		if (deployed) summary(deployed);
+
 		fastest(robot, num_robots);
 		return inValid;
 	}
@@ -157,5 +166,6 @@ namespace sdds {
 		cout << "|=============================================================================|" << endl;
 		cout << "| SUMMARY:                                                                    |" << endl;
 		cout << "| " << inValid << "  robots are deployed.                                                     |" << endl;
+		cout << "|=============================================================================|" << endl;
 	}
 }

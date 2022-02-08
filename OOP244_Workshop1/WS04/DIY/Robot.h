@@ -20,8 +20,8 @@ namespace sdds {
 		~Robot();
 		Robot(const char* name, const char* location, double weight, double width, double height, double Speed, bool deployed);
 		Robot& set(const char* name, const char* location, double weight, double width, double height, double Speed, bool deployed);
-		const char* setLocation();
-		bool setDeployed();
+		const char* setLocation(const char* location);
+		bool setDeployed(bool deployed);
 		const char* getName() const;
 		const char* getLocation() const;
 		bool isDeployed() const;
