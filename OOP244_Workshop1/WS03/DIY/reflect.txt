@@ -1,7 +1,0 @@
-//Workshop 3 part 2
-//Name   : chinganshih
-//ID     : 148221195
-//Email  : cshih9@myseneca.ca
-//Section: OOP244 NMM
-
-For workshop 3, we are practicing encapsulation and construction. Encapsulation consists of the state and logic of a type using a class and also it divides into two parts which are private and public. After finishing workshop 3, I have understood that we can only get access to public function and no permission to private variable which is hidden within itself. When calling transfer function to move as many passengers as possible, we should use pass by reference as parameters. Moreover, we can・t modify variables of two Train objects directly in global function because we only have permission to use public member function. While moving passengers of two trains, we will call public function to get number of people and use loadPeople to change the value. For global function, we will change value indirectly and store in our private variables. Another thing what I have learnt is while developing loadPeople, changeSpeed and Transfer function, we can・t modify Train object if we add ：const；. After practicing workshop 3, it・s clear to understand what encapsulation is and how to apply in our program. 
