@@ -1,7 +1,0 @@
-//Workshop 4 part 2
-//Name   : chinganshih
-//ID     : 148221195
-//Email  : cshih9@myseneca.ca
-//Section: OOP244 NMM
-
-For workshop 4, we have practiced while using pointer variables in out class. While assigning new value to pointer, we should first deallocate all memory and set new size of address. As professor mentioned during the class, we should assign value before deallocating it, otherwise it will cause errors. At this point, I call this->resetInfo() to reset the value before deallocating it. However, while running on Matrix, it caused ¡§error in 1 blocks are definitely lost in loss record¡¨. Try to fix this bug, I realized that it will overwrite it and cause memory leak. By this way, I move this->resetInfor() out of CarInventory& CarInventory::setInfo and store in CarInventory::CarInventory to call it before setInfo() and it works well. For DIY part, after setting up functions, there is an error in main.cpp file and said ¡§robot must have class/struct/union¡¨ (robot[broken_robot].set(replacmentName, "Control Room", 10.0, 4, 1, 2.09, false).display()). I found the method of set() should be reference of Robot and it helped me understand more about constructor.
