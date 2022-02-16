@@ -1,16 +1,11 @@
-/* ------------------------------------------------------
-Workshop 5 part 1
-Module: Flight
-Filename: Flight.h
-Version 1.0
-Date: 24/11/2021
-Author: Asam Gulaid
-Revised by: Fardad Soleimanloo
-Revision History
------------------------------------------------------------
-Initials    Date           Reason
-F.S.        07/02/2022     Peer Review
------------------------------------------------------------*/
+///* ------------------------------------------------------
+//Workshop 5 part 1
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------*/
+
 #ifndef SDDS_FLIGHT_H
 #define SDDS_FLIGHT_H
 #include <iostream>

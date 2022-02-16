@@ -5,6 +5,7 @@
 //Email  : cshih9@myseneca.ca
 //Section: OOP244 NMM
 //-----------------------------------------------------------*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstring>
 #include "Flight.h"
