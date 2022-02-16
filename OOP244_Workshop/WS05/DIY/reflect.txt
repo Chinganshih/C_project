@@ -1,0 +1,9 @@
+///* ------------------------------------------------------
+//Workshop 5 Reflection
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------*/
+
+For Workshop 5, we have learnt how to apply type conversion operator, unary member operator, binary member operators, and binary helper operators that support a class. For the conversion operator, we can convert concrete type objects to some primitive datatypes. Using assignment operators can move or assign from one object to another object, so we can simply write A = B to move B object to A by this way. Those binary member operators will affect on left operands and there are different operators such as +=, -=, <<, >>, /= and so on. However, for helper operators, they don¡¦t change the values of their operands. Also, helper operation is a global function access to the private members of a class. For example, we have created a global helper function called int operator+ (Flight& left, Flight& right) in cpp file, and we can just simply write flights[2] + flights[4] to add third flight¡¦s passengers and fifth flight¡¦s passenger by declaring helper function containing additional logic in our well-encapsulated class. After understanding how assignment operator and helper functions works, it will be very useful to simplify our code.
