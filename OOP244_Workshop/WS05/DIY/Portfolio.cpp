@@ -83,8 +83,8 @@ namespace sdds {
 
     //Portfolio can be casted to C - string(const char* type).
     //The result would be the name of the stock m_stock.This operator can not modify the Portfolio object.
-    Portfolio::operator char*() const {
-        return (char*)this->m_stock;
+    Portfolio::operator const char*() const {
+        return this->m_stock;
     }
 
     //Portfolio can be casted to a char(char type).

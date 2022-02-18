@@ -97,8 +97,8 @@ namespace sdds {
 
     //operator string
     //Returns the Flight Title.This operator can not modify the Flight object.
-    Flight::operator char*() const {
-        return (char*)this->m_title;
+    Flight::operator const char*() const {
+        return this->m_title;
     }
 
     //bool operator ~()

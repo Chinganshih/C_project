@@ -29,7 +29,7 @@ namespace sdds {
       operator bool() const;
       operator int() const;
       operator double() const;
-      operator char*() const;
+      operator const char*() const;
       bool operator ~() const;
 
       Flight& operator=(Flight& first);

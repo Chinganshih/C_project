@@ -27,7 +27,7 @@ namespace sdds {
        std::ostream& display() const;
 
        operator bool() const;
-       operator char*() const;
+       operator const char*() const;
        operator char() const;
        operator double() const;
 
