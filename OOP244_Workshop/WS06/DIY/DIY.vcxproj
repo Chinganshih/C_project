@@ -18,10 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Name.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Name.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="names.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1bd102d8-7576-4570-abd2-40ab44d39f2d}</ProjectGuid>
+    <ProjectGuid>{d66e8046-6adb-4744-83e3-1e0167240013}</ProjectGuid>
     <RootNamespace>DIY</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -138,13 +148,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\main.cpp" />
-    <ClCompile Include="..\..\Portfolio.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Portfolio.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
