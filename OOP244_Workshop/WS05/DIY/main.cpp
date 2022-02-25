@@ -27,7 +27,9 @@ void displayPortfolios(const Portfolio* Portfolios, int num) {
 }
 
 int main() {
-   double total;
+   
+   {
+    double total;
    Portfolio Portfolios[] = {
       {300000, "Fitzer", 'F'},   // invalid
       {400000, "Fitzer", 'G'},
@@ -70,6 +72,8 @@ int main() {
 
 
    displayPortfolios(Portfolios, 6);
+   }
 
+   cout << "Finished" << endl;
    return 0;
 }

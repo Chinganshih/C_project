@@ -156,4 +156,7 @@ namespace sdds {
         
         return left;
     }
+    Portfolio::~Portfolio() {
+        cout << this->m_type << "deallocated" << endl;
+    }
 }

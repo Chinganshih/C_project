@@ -21,6 +21,7 @@ namespace sdds {
    public:
        Portfolio();
        Portfolio(double value, const char* stock, char type);
+       ~Portfolio();
        void emptyPortfolio();
        void dispPortfolio() const;
        bool isVaild() const;
