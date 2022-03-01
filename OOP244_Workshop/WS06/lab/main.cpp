@@ -29,10 +29,10 @@ int main() {
    validationTest();
    dataEntryTest();
    for (i = 0; i < recs; i++) {
-      C = ReadCardFromFile(CardFile);
-      cout << C << endl;
-      if (CardFile) 
-          C.print(goodCardFile, true);
+        C = ReadCardFromFile(CardFile);
+        cout << C << endl;
+        if (CardFile)
+            C.print(goodCardFile, true);    
    }
    if (i == recs)
       cout << "\nAll records were read successfully!" << endl;
@@ -115,6 +115,7 @@ void dataEntryTest() {
 
 
 HealthCard ReadCardFromFile(istream& istr) {
+
    HealthCard C;
    istr >> C;
    return C;
