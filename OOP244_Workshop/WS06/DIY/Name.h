@@ -29,6 +29,8 @@ namespace sdds {
 		std::ostream& print(std::ostream& ostr) const;
 		~Name();
 	};
+
+	bool hasSpace(const char* str);
 	std::istream& operator>>(std::istream& istr, Name& n1);
 	std::ostream& operator<<(std::ostream& ostr, const Name& n1);
 }

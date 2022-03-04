@@ -10,6 +10,7 @@
 #include <iostream>
 #include <cstring>
 #include <cctype>
+#include <string>
 #include "Name.h"
 using namespace std;
 
@@ -140,7 +141,7 @@ namespace sdds {
 	}
 	
 	void Name::extractChar(std::istream& istr, char ch) const {
-		if (istr.peek() == ch)
+		if (istr.peek() == ch || isspace(ch))
 		{
 			istr.ignore();
 		}
@@ -151,26 +152,38 @@ namespace sdds {
 	}
 
 	istream& Name::read(std::istream& istr) {
-		char* firstName = new char[100];
-		char* middleName = new char[100];
-		char* lastName = new char[100];
+		char* firstName = nullptr;
+		char* middleName = nullptr;
+		char* lastName = nullptr;
+		string str;
+		bool inValid = false;
 
-		istr.get(firstName, 100, '\n');
-		this->extractChar(istr, '\n' || ' ');
-		istr.get(middleName, 100, '\n' || ' ');
-		this->extractChar(istr, '\n' || ' ');
-		istr.get(lastName, 100, '\n');
-		this->extractChar(istr, '\n');
+		getline(istr, str, ' ');
+		firstName = new char[str.length() + 1];
+		strcpy(firstName, str.c_str());
+		this->extractChar(istr, ' ');
+		
+		if (getline(istr, str, ' ')) {
+			middleName = new char[str.length() + 1];
+			strcpy(middleName, str.c_str());
+			
+		}
+		
+		if (getline(istr, str, '\n')) {
+			lastName = new char[str.length() + 1];
+			strcpy(lastName, str.c_str());
+			(hasSpace(lastName)) ? inValid = true : 0;
+			
+		}
 
-		if (!istr.fail()) {
+		if (!inValid) {
 			this->set(firstName, middleName, lastName);
 		}
-		else istr.clear(), istr.ignore(1000, '\n');
 
 		delete[] firstName;
 		delete[] middleName;
 		delete[] lastName;
-
+		
 		return istr;
 	}
 
@@ -206,6 +219,18 @@ namespace sdds {
 		
 		n1.print(ostr);
 		return ostr;
+	}
+
+	bool hasSpace(const char* str) {
+		int i;
+		bool hasSpace = false;
+
+		for (i = 0; i < strlen(str); i++)
+		{
+			if (isspace(str[i])) hasSpace = true;
+		}
+
+		return hasSpace;
 	}
 
 }

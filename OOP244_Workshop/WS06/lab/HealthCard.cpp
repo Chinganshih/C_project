@@ -182,8 +182,11 @@ namespace sdds {
         istr.get(sNumber, 10, '\n');
         this->extractChar(istr, '\n');
 
-        
-
+        if(!istr.fail()) {
+            this->set(name, number, vCode, sNumber);
+        }
+        else istr.clear(), istr.ignore(1000, '\n');
+    
         delete[] name;
        
         return istr;
