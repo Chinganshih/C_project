@@ -64,22 +64,48 @@ namespace sdds {
 
 	void Name::set(const char* firstName, const char* middleName, const char* lastName) {
 		
-		if (firstName != nullptr && strlen(firstName) > 0 && lastName != nullptr && strlen(lastName) > 0 && middleName != nullptr && strlen(middleName) > 0)
+		if (firstName != nullptr && strlen(firstName) > 0 )
 		{
 			this->firstName = new char[strlen(firstName) + 1];
-			strcpy(this->firstName, firstName);
-			this->lastName = new char[strlen(lastName) + 1];
-			strcpy(this->lastName, lastName);
+			strcpy(this->firstName, firstName);			
+		}
+
+		if (middleName != nullptr && strlen(middleName) > 0)
+		{
 			this->middleName = new char[strlen(middleName) + 1];
 			strcpy(this->middleName, middleName);
 		}
-		else this->setEmpty();
+		else this->middleName = nullptr;
+
+		if (lastName != nullptr && strlen(lastName) > 0)
+		{
+			this->lastName = new char[strlen(lastName) + 1];
+			strcpy(this->lastName, lastName);
+		}
+		else this->lastName = nullptr;
+
+	}
+
+	Name::Name(const Name& n1) {
+		this->set(n1.firstName, n1.middleName, n1.lastName);
+	}
+
+	Name& Name::operator=(const Name& n1) {
+		if (&n1 != this) this->set(n1.firstName, n1.middleName, n1.lastName);
+		return *this;
 	}
 
 	//The name must have a modifier method called "setShort" that accepts a boolean argument.If the argument passed is true, the middle name will be abbreviated when printed. (See Insertion to ostream for more detail)
 	void Name::setShort(bool isAbbreviated) {
+		char middle[3];
 		
-		if (isAbbreviated) strcpy(this->middleName, (&this->middleName[0] + '.'));
+		if (isAbbreviated && this->middleName != nullptr) {
+			middle[0] = this->middleName[0];
+			middle[1] = '.';
+			middle[2] = '\0';
+
+			strcpy(this->middleName, middle);
+		}
 	}
 
 	Name::~Name()
@@ -113,18 +139,20 @@ namespace sdds {
 		if (cstring != nullptr && strlen(cstring) > 0 && !hasSpace)
 		{
 			if (this->firstName == nullptr) {
+				this->firstName = new char[strlen(cstring) + 1];
 				strcpy(this->firstName, cstring);
 			}
-			else if (this->lastName == nullptr) {
-				strcpy(this->lastName, cstring);
-			}
 			else if (this->middleName == nullptr) {
+				this->middleName = new char[strlen(cstring) + 1];
 				strcpy(this->middleName, cstring);
 			}
+			else if (this->lastName == nullptr) {
+				this->lastName = new char[strlen(cstring) + 1];
+				strcpy(this->lastName, cstring);
+			}
+			else this->setEmpty();
 		}
-		else if (this->firstName != nullptr && this->lastName != nullptr && this->middleName != nullptr || hasSpace) {
-			this->setEmpty();
-		}
+		
 		
 		return *this;
 	}
@@ -135,55 +163,67 @@ namespace sdds {
 		bool result = false;
 		
 		if (this->firstName != nullptr) result = true;
-		if (this) result = false;
 
 		return result;
 	}
-	
-	void Name::extractChar(std::istream& istr, char ch) const {
-		if (istr.peek() == ch || isspace(ch))
-		{
-			istr.ignore();
-		}
-		else {
-			istr.ignore(1000, ch);
-			istr.setstate(ios::failbit);
-		}
-	}
 
 	istream& Name::read(std::istream& istr) {
-		char* firstName = nullptr;
-		char* middleName = nullptr;
-		char* lastName = nullptr;
-		string str;
+		string firstName;
+		string middleName;
+		string lastName;
+		char* first = nullptr;
+		char* middle = nullptr;
+		char* last = nullptr;
 		bool inValid = false;
+		int nameNum = 0;
 
-		getline(istr, str, ' ');
-		firstName = new char[str.length() + 1];
-		strcpy(firstName, str.c_str());
-		this->extractChar(istr, ' ');
+		if (istr.peek() != '\n')
+		{
+			istr >> firstName;
+			first = new char[firstName.length() + 1];
+			strcpy(first, firstName.c_str());
+			nameNum++;
+		}
 		
-		if (getline(istr, str, ' ')) {
-			middleName = new char[str.length() + 1];
-			strcpy(middleName, str.c_str());
+		if (istr.peek() != '\n') {
+			istr >> middleName;
+			middle = new char[middleName.length() + 1];
+			strcpy(middle, middleName.c_str());
+			nameNum++;
+		}
+
+		if (istr.peek() != '\n') {
+			istr >> lastName;
+			last = new char[lastName.length() + 1];
+			strcpy(last, lastName.c_str());
+			nameNum++;
+		}
+		if (istr.peek() != '\n') inValid = true;
+
+		if (!inValid)
+		{
+			switch (nameNum)
+			{
+			case 1:
+				this->set(first, nullptr, nullptr);
+				break;
+			case 2: 
+				this->set(first, nullptr, middle);
+				break;
+			case 3:
+				this->set(first, middle, last);
+			}
 			
 		}
-		
-		if (getline(istr, str, '\n')) {
-			lastName = new char[str.length() + 1];
-			strcpy(lastName, str.c_str());
-			(hasSpace(lastName)) ? inValid = true : 0;
-			
-		}
+		else this->setEmpty(), istr.clear();
 
-		if (!inValid) {
-			this->set(firstName, middleName, lastName);
-		}
+		delete[] first;
+		delete[] middle;
+		delete[] last;
+		first = nullptr;
+		middle = nullptr;
+		last = nullptr;
 
-		delete[] firstName;
-		delete[] middleName;
-		delete[] lastName;
-		
 		return istr;
 	}
 
@@ -195,6 +235,9 @@ namespace sdds {
 		}
 		else if (this->firstName != nullptr && this->middleName == nullptr && this->lastName != nullptr) {
 			ostr << this->firstName << " " << this->lastName;
+		}
+		else if (this->firstName != nullptr && this->middleName != nullptr && this->lastName == nullptr) {
+			ostr << this->firstName << " " << this->middleName;
 		}
 		else if (this->firstName != nullptr && this->middleName == nullptr && this->lastName == nullptr) {
 			ostr << this->firstName;
@@ -211,7 +254,8 @@ namespace sdds {
 	//3. FirstName<SPACE>MiddleName<SPACE>LastName<NEW LINE>
 	istream& operator>>(istream& istr, Name& n1) {
 		
-		n1.read(istr);
+		if (!istr.eof()) n1.read(istr);
+		
 		return istr;
 	}
 

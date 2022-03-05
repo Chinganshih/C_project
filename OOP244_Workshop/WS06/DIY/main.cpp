@@ -47,7 +47,7 @@ void nameTester(const char* prompt) {
 int main() {
    Name A[4] = { {"Homer"},{"Homer", "Simpson"}, {"Homer", "Jay", "Simpson"} };
    Name N = "Milhouse";
-   printNames(A, 4);
+   /*printNames(A, 4);
    nameTester("Enter the follwing:\n> Homer Jay Simpson Adams\n> ");
    nameTester("Enter the follwing:\n> Homer Jay Simpson\n> ");
    nameTester("Enter the follwing:\n> Homer Simpson\n> ");
@@ -62,7 +62,7 @@ int main() {
    A[1] = A[2];
    cout << "An assigned name: " << A[1] << endl;
    A[2] = A[2];
-   cout << "A self assigned name: " << A[1] << endl;
+   cout << "A self assigned name: " << A[1] << endl;*/
    ifstream names("names.txt");
    cout << endl << "Names in the file in short form:" << endl
       << "-------------------------------" << endl;

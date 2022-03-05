@@ -14,7 +14,6 @@ namespace sdds {
 		char* middleName;
 		char* lastName;
 		void setEmpty();
-		void extractChar(std::istream& istr, char ch) const;
 		
 	public:
 		Name();
@@ -22,6 +21,8 @@ namespace sdds {
 		Name(const char* firstName, const char* lastName);
 		Name(const char* firstName, const char* middleName, const char* lastName);
 		void set(const char* firstName, const char* middleName, const char* lastName);
+		Name(const Name& n1);
+		Name& operator=(const Name& n1);
 		operator bool() const;
 		void setShort(bool isAbbreviated);
 		Name& operator +=(const char cstring[]);
