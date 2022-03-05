@@ -1,0 +1,9 @@
+// ------------------------------------------------------
+//Workshop 6 reflection
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------
+
+In workshop 6, we have practiced how to define and implement multiple constructors and the rule of three. For the rule of three, there are three main components to build our Class, such as copy constructor, copy assignment operator overload, and destructor to set the values of the current object to those of the incoming argument and also make sure this is not a self-copy. In the end, deallocate all dynamic memory to avoid a memory leak. Moreover, we implement read and write formatted data using istream and ostream. Also, we can use istream to read ifstream. At this point, we should use overload the extraction and insertion operators for input and output by using iostream. We can pass iostream as parameter to our function and return the object reference. While extracting out data, we also use setstate() and peek() two member functions to set the status of the istream object to the desired state. For peek(), it will check the next character without extracting it from the keyboard.  After completing workshop 6, it makes me understand how iostream works and how to extract from the file and insert data  to the file.

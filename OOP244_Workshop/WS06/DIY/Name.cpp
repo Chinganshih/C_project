@@ -177,45 +177,45 @@ namespace sdds {
 		bool inValid = false;
 		int nameNum = 0;
 
-		if (istr.peek() != '\n')
-		{
-			istr >> firstName;
-			first = new char[firstName.length() + 1];
-			strcpy(first, firstName.c_str());
-			nameNum++;
-		}
+		istr >> firstName;
+		first = new char[firstName.length() + 1];
+		strcpy(first, firstName.c_str());
+		nameNum++;
 		
-		if (istr.peek() != '\n') {
-			istr >> middleName;
-			middle = new char[middleName.length() + 1];
-			strcpy(middle, middleName.c_str());
-			nameNum++;
-		}
-
-		if (istr.peek() != '\n') {
-			istr >> lastName;
-			last = new char[lastName.length() + 1];
-			strcpy(last, lastName.c_str());
-			nameNum++;
-		}
-		if (istr.peek() != '\n') inValid = true;
-
-		if (!inValid)
+		if (!istr.eof())
 		{
-			switch (nameNum)
-			{
-			case 1:
-				this->set(first, nullptr, nullptr);
-				break;
-			case 2: 
-				this->set(first, nullptr, middle);
-				break;
-			case 3:
-				this->set(first, middle, last);
+			if (istr.peek() != '\n') {
+				istr >> middleName;
+				middle = new char[middleName.length() + 1];
+				strcpy(middle, middleName.c_str());
+				nameNum++;
 			}
-			
+			if (istr.peek() != '\n') {
+				istr >> lastName;
+				last = new char[lastName.length() + 1];
+				strcpy(last, lastName.c_str());
+				nameNum++;
+			}
+			if (istr.peek() != '\n') inValid = true;
+			if (!inValid)
+			{
+				switch (nameNum)
+				{
+				case 1:
+					this->set(first, nullptr, nullptr);
+					break;
+				case 2:
+					this->set(first, nullptr, middle);
+					break;
+				case 3:
+					this->set(first, middle, last);
+				}
+
+			}
+			else this->setEmpty(), istr.clear();
 		}
-		else this->setEmpty(), istr.clear();
+		else istr.fail();
+		
 
 		delete[] first;
 		delete[] middle;
@@ -254,9 +254,8 @@ namespace sdds {
 	//3. FirstName<SPACE>MiddleName<SPACE>LastName<NEW LINE>
 	istream& operator>>(istream& istr, Name& n1) {
 		
-		if (!istr.eof()) n1.read(istr);
-		
-		return istr;
+	
+		return n1.read(istr);
 	}
 
 	ostream& operator<<(ostream& ostr, const Name& n1) {
