@@ -10,11 +10,15 @@
 namespace sdds {
 	class Name
 	{
-		char* firstName;
-		char* middleName;
-		char* lastName;
+		char* firstName{};
+		char* middleName{};
+		char* lastName{};
 		void setEmpty();
-		
+		void deallocate();
+		bool validName(const char* name);
+		void allocateFirst(const char* firstname);
+		void allocateMiddle(const char* middlename);
+		void allocateLast(const char* lastname);
 	public:
 		Name();
 		Name(const char* firstName);
