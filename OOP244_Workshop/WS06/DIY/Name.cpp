@@ -31,62 +31,96 @@ namespace sdds {
 		this->setEmpty();
 	}
 
+	void Name::deallocate() {
+		delete[] this->firstName;
+		delete[] this->middleName;
+		delete[] this->lastName;
+		
+		this->firstName = nullptr;
+		this->middleName = nullptr;
+		this->lastName = nullptr;
+	}
+
+	bool Name::validName(const char* name) {
+		return (name != nullptr && strlen(name) > 0);
+	}
+
+	//Allocate FirstName
+	void Name::allocateFirst(const char* firstname) {
+		delete[] this->firstName;
+		this->firstName = new char[strlen(firstname) + 1];
+		strcpy(this->firstName, firstname);
+	}
+
+	//Allocate MiddleName
+	void Name::allocateMiddle(const char* middlename) {
+		delete[] this->middleName;
+		this->middleName = new char[strlen(middlename) + 1];
+		strcpy(this->middleName, middlename);	
+	}
+
+	//Allocate LastName
+	void Name::allocateLast(const char* lastname) {
+		delete[] this->lastName;
+		this->lastName = new char[strlen(lastname) + 1];
+		strcpy(this->lastName, lastname);
+	}
+
 	//2 - One argument(Cstring).Only the first name is set
 	Name::Name(const char* firstName) {
 
-		if (firstName != nullptr && strlen(firstName) > 0)
+		if (validName(firstName))
 		{
-			this->firstName = new char[strlen(firstName) + 1];
-			strcpy(this->firstName, firstName);
-			this->middleName = nullptr;
-			this->lastName = nullptr;
+			this->setEmpty();
+			this->set(firstName, "", "");
 		}
 		else this->setEmpty();
 	}
 
 	//3 - Two arguments(Cstring), First nameand last name are set. 
 	Name::Name(const char* firstName, const char* lastName) {
-		if (firstName != nullptr && strlen(firstName) > 0 && lastName != nullptr && strlen(lastName) >0)
+		
+		if (validName(firstName) && validName(lastName))
 		{
-			this->firstName = new char[strlen(firstName) + 1];
-			strcpy(this->firstName, firstName);
-			this->lastName = new char[strlen(lastName) + 1];
-			strcpy(this->lastName, lastName);
-			this->middleName = nullptr;
+			this->setEmpty();
+			this->set(firstName, "", lastName);
 		}
 		else this->setEmpty();
 	}
 
 	//4 - Three arguments(Cstring), First, Middleand Last names are set.
 	Name::Name(const char* firstName, const char* middleName, const char* lastName) {
+		
+		this->setEmpty();
 		this->set(firstName, middleName, lastName);
 	}
 
 	void Name::set(const char* firstName, const char* middleName, const char* lastName) {
 		
-		if (firstName != nullptr && strlen(firstName) > 0 )
-		{
-			this->firstName = new char[strlen(firstName) + 1];
-			strcpy(this->firstName, firstName);			
-		}
+		this->deallocate();
 
-		if (middleName != nullptr && strlen(middleName) > 0)
+		if (validName(firstName) && validName(middleName) && validName(lastName))
 		{
-			this->middleName = new char[strlen(middleName) + 1];
-			strcpy(this->middleName, middleName);
+			this->allocateFirst(firstName);
+			this->allocateMiddle(middleName);
+			this->allocateLast(lastName);
 		}
-		else this->middleName = nullptr;
-
-		if (lastName != nullptr && strlen(lastName) > 0)
+		else if (validName(firstName) && !validName(middleName) && validName(lastName)) {
+			
+			this->allocateFirst(firstName);
+			this->allocateLast(lastName);
+		}
+		else if (validName(firstName)) {
+			this->allocateFirst(firstName);
+		}
+		else
 		{
-			this->lastName = new char[strlen(lastName) + 1];
-			strcpy(this->lastName, lastName);
+			this->setEmpty();
 		}
-		else this->lastName = nullptr;
-
 	}
 
 	Name::Name(const Name& n1) {
+		this->setEmpty();
 		this->set(n1.firstName, n1.middleName, n1.lastName);
 	}
 
@@ -129,30 +163,36 @@ namespace sdds {
 	Name& Name::operator +=(const char cstring[]) {
 
 		bool hasSpace = false;
-		int i;
-
+		unsigned i;
+		
 		for (i = 0; i < strlen(cstring); i++)
 		{
 			if (isspace(cstring[i])) hasSpace = true;
 		}
 
-		if (cstring != nullptr && strlen(cstring) > 0 && !hasSpace)
+		if (validName(cstring) && !hasSpace)
 		{
+
 			if (this->firstName == nullptr) {
-				this->firstName = new char[strlen(cstring) + 1];
-				strcpy(this->firstName, cstring);
+				this->firstName = nullptr;
+				delete[] firstName;
+				this->allocateFirst(cstring);
 			}
 			else if (this->middleName == nullptr) {
-				this->middleName = new char[strlen(cstring) + 1];
-				strcpy(this->middleName, cstring);
+				this->middleName = nullptr;
+				delete[] middleName;
+				this->allocateMiddle(cstring);
 			}
 			else if (this->lastName == nullptr) {
-				this->lastName = new char[strlen(cstring) + 1];
-				strcpy(this->lastName, cstring);
+				this->lastName = nullptr;
+				delete[] lastName;
+				this->allocateLast(cstring);
 			}
-			else this->setEmpty();
+			else {
+				this->deallocate();
+			}
+			
 		}
-		
 		
 		return *this;
 	}
@@ -177,6 +217,9 @@ namespace sdds {
 		bool inValid = false;
 		int nameNum = 0;
 
+		//deallocate first ---> otherwise it causes memory leak
+		deallocate();
+		//extract firstname
 		istr >> firstName;
 		first = new char[firstName.length() + 1];
 		strcpy(first, firstName.c_str());
@@ -184,19 +227,23 @@ namespace sdds {
 		
 		if (!istr.eof())
 		{
+			//extract middlename
 			if (istr.peek() != '\n') {
 				istr >> middleName;
 				middle = new char[middleName.length() + 1];
 				strcpy(middle, middleName.c_str());
 				nameNum++;
 			}
+			//extract lastname
 			if (istr.peek() != '\n') {
 				istr >> lastName;
 				last = new char[lastName.length() + 1];
 				strcpy(last, lastName.c_str());
 				nameNum++;
 			}
+			//if there is more value, set to inValid
 			if (istr.peek() != '\n') inValid = true;
+
 			if (!inValid)
 			{
 				switch (nameNum)
@@ -215,7 +262,6 @@ namespace sdds {
 			else this->setEmpty(), istr.clear();
 		}
 		else istr.fail();
-		
 
 		delete[] first;
 		delete[] middle;
@@ -253,8 +299,6 @@ namespace sdds {
 	//2. FirstName<SPACE>LastName < NEW LINE>
 	//3. FirstName<SPACE>MiddleName<SPACE>LastName<NEW LINE>
 	istream& operator>>(istream& istr, Name& n1) {
-		
-	
 		return n1.read(istr);
 	}
 
@@ -265,7 +309,7 @@ namespace sdds {
 	}
 
 	bool hasSpace(const char* str) {
-		int i;
+		unsigned i;
 		bool hasSpace = false;
 
 		for (i = 0; i < strlen(str); i++)

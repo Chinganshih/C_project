@@ -48,10 +48,10 @@ int main() {
    Name A[4] = { {"Homer"},{"Homer", "Simpson"}, {"Homer", "Jay", "Simpson"} };
    Name N = "Milhouse";
    printNames(A, 4);
-   nameTester("Enter the follwing:\n> Homer Jay Simpson Adams\n> ");
+  /* nameTester("Enter the follwing:\n> Homer Jay Simpson Adams\n> ");
    nameTester("Enter the follwing:\n> Homer Jay Simpson\n> ");
    nameTester("Enter the follwing:\n> Homer Simpson\n> ");
-   nameTester("Enter the follwing:\n> Homer\n> ");
+   nameTester("Enter the follwing:\n> Homer\n> ");*/
    cout << N << "+= \"\": " << (N += "") << endl;
    cout << N << "+= \"    \": " << (N += "   ") << endl;
    cout << N << "+= Van: " << (N += "Van") << endl;
