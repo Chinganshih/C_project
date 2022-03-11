@@ -87,7 +87,10 @@ namespace sdds {
 	Date& Date::operator=(const Date& date) {
 		if (this != &date)
 		{
-			this->set(date.year, date.month, date.day);
+			//shallow copy
+			year = date.year;
+			month = date.month;
+			day = date.day;
 		}
 		return *this;
 	}
