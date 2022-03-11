@@ -19,6 +19,7 @@ who gave it to you, or from what source you acquired it.
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
+#include <cstring>
 #include "Utils.h"
 
 using namespace std;

@@ -121,11 +121,11 @@ namespace sdds{
 	//When printing the status object the code is printed only if it is not zero as follows `"ERR# ? ? ? : " where ??? replaced with the code.
 	//Then the description of the Status object is printed.
 	ostream& operator<<(std::ostream& ostr, const Status& s) {
-		int code = int();
+		int code = s.operator int();
 
 		if (!s)
 		{
-			if(code != 0) ostr << "ERR#" << code << endl;
+			if (code != 0) ostr << "ERR#" << code << ": ";
 			ostr << s.operator const char* ();
 		}
 		return ostr;

@@ -61,7 +61,7 @@ namespace sdds {
 
 	Date::Date()
 	{
-		Utils::getSystemDate(&this->year, &this->month, &this->day);
+		this->set(sdds_testYear, sdds_testMon, sdds_testDay);
 		this->isFormat = 1;
 	}
 
@@ -70,7 +70,7 @@ namespace sdds {
 	}
 
 	void Date::set(int year, int month, int day) {
-		if (validate()) {
+		if (year != 0 && month != 0 && day != 0) {
 			this->year = year;
 			this->month = month;
 			this->day = day;
