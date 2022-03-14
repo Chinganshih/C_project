@@ -72,14 +72,12 @@ namespace sdds {
 
         if (prompt != nullptr)
         {
-            do
+            while (!(cin >> enter))
             {
-                cout << "Invalid Integer, retry: ";
-                cin >> enter;
-                cin.ignore(1000, '\n');
                 cin.clear();
-
-            } while (!enter);
+                cin.ignore(1000, '\n'); 
+                cout << "Invalid Integer, retry: ";
+            }
 
         }
         return enter;
@@ -98,14 +96,14 @@ namespace sdds {
             do
             {
                 flag = 0;
-                enter = getint();
-                if (!enter >= min && !enter <= max)
+                enter = getint(prompt);
+                if (enter < min || enter > max)
                 {
-                    if (errMes != nullptr)
+                    if (errMes != nullptr && !enter)
                     {
                         cout << ", retry: ";
                     }
-                    else cout << "Value out of range [" << min << "<=val<=" << max << "]: " << endl;
+                    else cout << "Value out of range [" << min << "<=val<=" << max << "]: ";
                     flag = 1;
                 }
             } while (flag);

@@ -21,6 +21,8 @@ who gave it to you, or from what source you acquired it.
 #include <cstring>
 #include <fstream>
 #include "Date.h"
+#include "Utils.h"
+
 using namespace std;
 
 namespace sdds {

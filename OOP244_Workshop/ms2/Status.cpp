@@ -21,10 +21,11 @@ who gave it to you, or from what source you acquired it.
 #include <cstring>
 #include <fstream>
 #include "Status.h"
+
 using namespace std;
 
 namespace sdds {
-
+	
 	void Status::setEmpty() {
 		this->desc = nullptr;
 		this->code = 0;
