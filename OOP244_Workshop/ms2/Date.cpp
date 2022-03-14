@@ -18,8 +18,6 @@ who gave it to you, or from what source you acquired it.
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
-#include <cstring>
-#include <fstream>
 #include "Date.h"
 #include "Utils.h"
 
