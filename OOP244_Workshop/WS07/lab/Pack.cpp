@@ -25,7 +25,7 @@ namespace sdds{
 		Container::setEmpty();
 	}
 
-	Pack::Pack(const char* content, int size, int unitSize, int numOfUnits) {
+	Pack::Pack(const char* content, int size, int unitSize, int numOfUnits) : Container(content, size* unitSize, numOfUnits* unitSize){
 		
 		this->content = nullptr;
 		set(content, size, unitSize, numOfUnits);
@@ -46,7 +46,6 @@ namespace sdds{
 			this->size = size;
 			this->unitSize = unitSize;
 			this->numOfUnits = numOfUnits;
-			Container::set(content, size * unitSize, numOfUnits * unitSize);			
 		}
 		else {
 			setEmpty();
@@ -111,7 +110,7 @@ namespace sdds{
 	}
 
 	istream& Pack::read(std::istream& istr) {
-		int enter = -1, flag = 1;
+		int enter = -1;
 
 		if (this->content == nullptr)
 		{
@@ -124,8 +123,8 @@ namespace sdds{
 			{
 				cout << "Add to " << this->content << ": (" << Container::Volume() << "cc/" << Container::Capacity() << "), " << this->numOfUnits << " in a pack of " << this->size << endl;
 				cout << "> ";
-				enter = getint(1, size - numOfUnits);
-				cout << "Added " << operator+=(enter) << endl;
+				enter = Container::getint(1, size - numOfUnits);
+				cout << "Added " << (*this+=enter) << endl;
 			}
 			else {
 				cout << "Pack is full!, press <ENTER> to continue...";
@@ -133,27 +132,6 @@ namespace sdds{
 			}
 		}
 		return istr;
-	}
-
-	int Pack::getint(int min, int max) {
-		int enter = -1, flag =1;
-		do
-		{
-			cin >> enter;
-			cin.clear();
-			cin.ignore(1000, '\n');
-			if (!enter)
-			{
-				cout << "Invalid Integer, retry: ";
-			}
-			else if (numOfUnits + enter > size)
-			{
-				cout << "Value out of range [" << 1 << "<=val<=" << max << "]: ";
-			}
-			else flag = 0;
-		} while (flag);
-
-		return enter;
 	}
 
 	ostream& operator<<(ostream& ostr, const Pack& p) {

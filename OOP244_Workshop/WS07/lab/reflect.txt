@@ -1,0 +1,9 @@
+// ------------------------------------------------------
+//Workshop 7 reflection
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------
+
+For workshop 7, we have learnt the hierarchical structure which is to derive from common base class. The feature of the base class is inherited onto more than one child-class. In order to access the member function of the base class, we use Base::identifier(arguments) to access the function. In Pack.cpp, we get access to the Container¡¦s function by using Container::setEmpty(). When we inherit Container class in our Pack class, it will automatically call the base class default constructor. For Pack class, we also pass argument to a base class constructor to build the base class part of the object to base class constructor. For example, Pack(parameter) : Container(arguments) is to call the base class and build the value received from a derived class constructor. For a derived class, we can¡¦t inherit the destructor, assignment operators or helper functions of a base class. For the constructor, it executes in order from the base class to the derived class, and destructor will execute oppositely from the derived class to the base class.
