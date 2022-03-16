@@ -35,7 +35,6 @@ namespace sdds {
 		int noOfUnits() const;
 		int Size() const;
 		void clear(int size, int unitSize, const char* content);
-		int getint(int min, int max);
 		std::ostream& print(std::ostream& ostr) const;
 		std::istream& read(std::istream& istr);
 	};

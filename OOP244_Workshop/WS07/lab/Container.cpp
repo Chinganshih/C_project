@@ -126,15 +126,14 @@ namespace sdds{
 		if (this->content == nullptr)
 		{
 			cout << "Broken Container, adding aborted! Press <ENTER> to continue....";
-			cin.clear();
 			istr.ignore(100, '\n');
 		}
 		else
 		{
 			cout << "Add to "<< this->content << ": (" << this->volume << "cc/" << this->capacity << ")" << endl;
 			cout << "> ";
-			enter = getint(1, 220000);
-			cout << "Adding " << operator+=(enter) << " CCs" << endl;
+			enter = getint(1, 999);
+			cout << "Added " << (*this+=enter) << " CCs" << endl;
 		}
 		return istr;
 	}
@@ -145,7 +144,7 @@ namespace sdds{
 	 if the errMes argument is not null it will be displayed followed by ", retry: " otherwise the general error message "Value out of range [min<=val<=max]: " is displayed(replacing min and max with their values)*/
 	int Container::getint(int min, int max) {
 		int enter = -1;
-		bool flag = 0;
+		bool flag = 1;
 
 		do
 		{
@@ -156,7 +155,7 @@ namespace sdds{
 			{
 				cout << "Invalid Integer, retry: ";
 			}
-			else if (enter < 0 || enter > 220000)
+			else if (enter < min || enter > max)
 			{
 				cout << "Value out of range [" << 1 << "<=val<=" << max << "]: ";
 			}
@@ -173,7 +172,7 @@ namespace sdds{
 	}
 
 	bool Container::isValid(const char* content, int capacity, int volume) const{
-		return (strlen(content) <= 50 && strlen != nullptr && volume <= capacity);
+		return (strlen(content) <= 50 && content != nullptr && volume <= capacity);
 	}
 
 	//Sets the Container to an invalid empty state
