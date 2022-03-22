@@ -22,6 +22,7 @@ namespace sdds {
 	public:
 		Rectangle();
 		Rectangle(const char* label, int width, int height);
+		void set(const char* label, int width, int height);
 		void getSpecs(std::istream& istr);
 		void draw(std::ostream& ostr) const;
 	};

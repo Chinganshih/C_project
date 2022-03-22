@@ -9,8 +9,9 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include "Rectangle.h"
 #include <iomanip>
+#include <cstring>
+#include "Rectangle.h"
 using namespace std;
 
 namespace sdds {
@@ -28,16 +29,23 @@ namespace sdds {
 	}
 
 	//Receives a Cstring for the label, and two values for the widthand height of the Rectangle from the argument list.
-	//Passes the Cstring to the constructor of the base classand sets the m_widthand m_height member variables to the corresponding values received from the argument list.
+	//Passes the Cstring to the constructor of the base class and sets the m_widthand m_height member variables to the corresponding values received from the argument list.
 	//However if the m_height is less than 3 or m_width is less the length of the label() + 2 it will set the Rectangle to an empty state.
 	Rectangle::Rectangle(const char* label, int width, int height):LblShape(label) {
+		
+		set(label, width, height);
+		
+	}
+
+	//set 
+	void Rectangle::set(const char* label, int width, int height) {
+		
 		if (height > 3 || (unsigned)width >= (strlen(LblShape::label() + 2)))
 		{
 			m_width = width;
 			m_height = height;
 		}
 		else setEmpty();
-		
 	}
 
 	//Reads comma - separated specs of the Rectangle from istream.

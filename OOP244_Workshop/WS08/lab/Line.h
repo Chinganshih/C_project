@@ -22,8 +22,6 @@ namespace sdds {
 		Line(const char* label, int length);
 		void getSpecs(std::istream& istr);
 		void draw(std::ostream& ostr) const;
-	private:
-
 	};
 
 

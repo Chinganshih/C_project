@@ -17,13 +17,14 @@ namespace sdds {
 	class LblShape : public Shape
 	{
 		//Add a character pointer member variable called m_labeland initialize it to null.This member variable will be used to hold the dynamically allocated label for the Shape.
-		char* m_label{};
+		char* m_label = nullptr;
 	protected:
 		//Add a query called label that returns the unmodifiable value of m_label member variable.
 		const char* label() const;
 	public:
-		LblShape();
+		LblShape() {};
 		LblShape(const char* m_label);
+		void set(const char* m_label);
 		~LblShape();
 		void extractChar(std::istream& istr, char ch) const;
 		void getSpecs(std::istream& istr);
