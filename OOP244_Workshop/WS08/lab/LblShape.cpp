@@ -23,19 +23,14 @@ namespace sdds {
 	//Allocates memory large enough to hold the incoming Cstring argument pointed by the m_label member variable.
 	//Then copies the Cstring argument to the newly allocated memory.
 	LblShape::LblShape(const char* m_label) {
-		this->m_label = nullptr;
-		set(m_label);
-	}
-
-	void LblShape::set(const char* m_label) {
 		delete[] this->m_label;
-		this->m_label = nullptr;
 		this->m_label = new char[strlen(m_label) + 1];
 		strcpy(this->m_label, m_label);
 	}
 
 	//Deletes the memory pointed by m_label member variable.
 	LblShape::~LblShape() {
+
 		delete[] this->m_label;
 		this->m_label = nullptr;
 	}
@@ -60,6 +55,7 @@ namespace sdds {
 		istr.get(label, 100, ',');
 		extractChar(istr, ',');
 
+		delete[] this->m_label; // without it --> cause memory leak
 		this->m_label = new char[strlen(label) + 1];
 		strcpy(this->m_label, label);
 		if (istr.peek() == ',') istr.ignore();

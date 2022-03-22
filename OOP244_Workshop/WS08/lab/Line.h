@@ -16,6 +16,7 @@ namespace sdds {
 	//(this concrete class draws a labelled line)
 	class Line: public  LblShape
 	{
+		//Create a member variable called m_length to hold the length of the Line in characters.
 		int m_length=0;
 	public:
 		Line();

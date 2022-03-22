@@ -24,7 +24,8 @@ namespace sdds {
 	public:
 		LblShape() {};
 		LblShape(const char* m_label);
-		void set(const char* m_label);
+		LblShape(const LblShape&) = delete;
+		LblShape& operator=(const LblShape&) = delete;
 		~LblShape();
 		void extractChar(std::istream& istr, char ch) const;
 		void getSpecs(std::istream& istr);

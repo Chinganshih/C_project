@@ -13,6 +13,8 @@
 using namespace std;
 
 namespace sdds {
+
+	//Overload the insertionand extraction operators(using drawand getSpecs functions) so any shape object can be written or read using ostreamand istream.
 	ostream& operator<<(ostream& ostr, const Shape& s) {
 		s.draw(ostr);
 		return ostr;

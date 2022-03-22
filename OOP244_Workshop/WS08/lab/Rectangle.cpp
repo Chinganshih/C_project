@@ -33,13 +33,6 @@ namespace sdds {
 	//However if the m_height is less than 3 or m_width is less the length of the label() + 2 it will set the Rectangle to an empty state.
 	Rectangle::Rectangle(const char* label, int width, int height):LblShape(label) {
 		
-		set(label, width, height);
-		
-	}
-
-	//set 
-	void Rectangle::set(const char* label, int width, int height) {
-		
 		if (height > 3 || (unsigned)width >= (strlen(LblShape::label() + 2)))
 		{
 			m_width = width;
