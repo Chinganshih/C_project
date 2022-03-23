@@ -27,7 +27,7 @@ namespace sdds {
 		return istr;
 	}
 
-	ostream& operator<<(ostream& ostr, iProduct& i) {
+	ostream& operator<<(ostream& ostr, const iProduct& i) {
 		i.display(ostr);
 		return ostr;
 	}
