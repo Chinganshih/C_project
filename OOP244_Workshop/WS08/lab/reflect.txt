@@ -1,0 +1,9 @@
+// ------------------------------------------------------
+//Workshop 8 part 2 Reflection
+//Name   : chinganshih
+//ID     : 148221195
+//Email  : cshih9@myseneca.ca
+//Section: OOP244 NMM
+//-----------------------------------------------------------
+
+For workshop 8, it¡¦s about virtual functions and abstract class. When it comes to polymorphism, those two concepts are important to implement in object-oriented languages. It refers to some multiple logic with same names when complier executes program, and it will decide which one it should run in base or derived class. In virtual function, there are two forms of the binding of a member function, early binding and dynamic dispatch. We use the keyword virtual for dynamic dispatch based on the object¡¦s dynamic type. We implement this feature in draw and getSpec functions by adding ¡§virtual¡¨ in our Shape interface. Also, we create the pure virtual functions that has no implement. The pure virtual function is one of the main components of an abstract base class. We can create different meaning and definition within its hierarchy. In Line.cpp and Rectangle.cpp, we define different logic with the same names as our pure virtual function. It provides us with the implementation that has a specific dynamic type. This workshop is a good practice for inheritance and polymorphism.   
