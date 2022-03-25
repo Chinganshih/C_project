@@ -23,7 +23,7 @@ namespace sdds {
 
 	//Sets the widthand height member variables to zero.
 	//It will also invoke the default constructor of the base class.
-	Rectangle::Rectangle():LblShape()
+	Rectangle::Rectangle()
 	{
 		setEmpty();
 	}

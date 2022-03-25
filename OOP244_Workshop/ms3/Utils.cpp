@@ -111,4 +111,56 @@ namespace sdds {
         return enter;
     }
 
+    double Utils::getDouble(const char* prompt) {
+        double enter = -1;
+
+        if (prompt != nullptr)
+        {
+            while (!(cin >> enter))
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Invalid Integer, retry: ";
+            }
+
+        }
+        return enter;
+    }
+
+    double Utils::getDouble(double min, double max, const char* prompt, const char* errMes) {
+        double enter = -1;
+        bool flag = 0;
+
+        if (prompt != nullptr)
+        {
+            do
+            {
+                flag = 0;
+                enter = getDouble(prompt);
+                if (enter < min || enter > max)
+                {
+                    if (errMes != nullptr && !enter)
+                    {
+                        cout << ", retry: ";
+                    }
+                    else cout << "Value out of range [" << min << "<=val<=" << max << "]: ";
+                    flag = 1;
+                }
+            } while (flag);
+        }
+        return enter;
+    }
+
+    void Utils::extractChar(istream& istr, char ch) const {
+
+        if (istr.peek() == ch)
+        {
+            istr.ignore();
+        }
+        else {
+            istr.ignore(1000, ch);
+            istr.setstate(ios::failbit);
+        }
+    }
+
 }

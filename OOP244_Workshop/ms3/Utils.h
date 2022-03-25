@@ -1,5 +1,6 @@
 #ifndef SDDS_UTILS_H
 #define SDDS_UTILS_H
+
 namespace sdds {
     const int sdds_testYear = 2022;
     const int sdds_testMon = 03;
@@ -13,6 +14,9 @@ namespace sdds {
         void alocpy(char*& destination, const char* source);
         int getint(const char* prompt = nullptr);
         int getint(int min, int max, const char* prompt = nullptr, const char* errMes = nullptr);
+        double getDouble(const char* prompt = nullptr);
+        double getDouble(double min, double max, const char* prompt = nullptr, const char* errMes = nullptr);
+        void extractChar(std::istream& istr, char ch) const;
     };
     extern Utils ut;
 }

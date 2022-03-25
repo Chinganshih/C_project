@@ -3,7 +3,7 @@
 #define IPRODUCT_H
 #include <iostream>
 namespace sdds {
-	class iProduct
+	class iProduct 
 	{
 	public:
 		virtual ~iProduct() {};
@@ -24,7 +24,7 @@ namespace sdds {
 		virtual int qty()const=0;
 		// determines if the iProduct is displayed in a linear format or 
 		// descriptive format
-		virtual void Linear(bool isLinear) {};
+		virtual void linear(bool isLinear) {};
 		// saves the iProduct into a file
 		virtual std::ofstream& save(std::ofstream& ofstr)const { return ofstr; };
 		// loads an iProduct from a file
