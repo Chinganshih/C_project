@@ -253,7 +253,7 @@ namespace sdds {
 	//Reads the SKU from the screen with the prompt "SKU: ".It makes sure the SKU number begins with digits 4 to 9 and it is 5 digits long.
 	int Item::readSku(istream& istr) {
 		cout << "SKU: ";
-		sku = ut.getint(40000, 90000, "validSKU");
+		sku = ut.getint(40000, 99999, "validSKU");
 		istr.clear();
 		istr.ignore(1000, '\n');
 		return sku;
