@@ -202,7 +202,7 @@ namespace sdds {
 				<< setw(35) << left << str_desc << " | "
 				<< setw(4) << right << hand_qua << " | "
 				<< setw(4) << right << need_qua << " | "
-				<< setw(7) << right << fixed << setprecision(2) << price << " | ";
+				<< setw(7) << right << fixed << setprecision(2) << price << " |";
 		}
 		else
 		{

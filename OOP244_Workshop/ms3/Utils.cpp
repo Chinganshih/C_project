@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 1
+Final Project Milestone 3
 Module: Date
 Filename: Utils.cpp
 Version 1.0
@@ -20,6 +20,7 @@ who gave it to you, or from what source you acquired it.
 #include <iostream>
 #include <ctime>
 #include <cstring>
+#include <iomanip>
 #include "Utils.h"
 
 using namespace std;
@@ -120,7 +121,7 @@ namespace sdds {
             {
                 cin.clear();
                 cin.ignore(1000, '\n');
-                cout << "Invalid Integer, retry: ";
+                cout << "Invalid number, retry: ";
             }
 
         }
@@ -143,7 +144,7 @@ namespace sdds {
                     {
                         cout << ", retry: ";
                     }
-                    else cout << "Value out of range [" << min << "<=val<=" << max << "]: ";
+                    else cout << "Value out of range [" << fixed << setprecision(2) << min << "<=val<=" << fixed << setprecision(2) << max << "]: ";
                     flag = 1;
                 }
             } while (flag);
