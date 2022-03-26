@@ -137,7 +137,12 @@ namespace sdds {
 	//the constant character pointer comparison searches in the description of the Item for the appearance of the received Cstring.
 	//If a match was found it returns true.If any of the descriptions(The Items or the received value) are null or the match is not found, it will return false.
 	bool Item::operator==(const char* description)const {
-		return (!strcmp(this->desc, description) && this->desc != nullptr && description != nullptr) ? true : false;
+		char* match;
+		match = strstr(this->desc, description);
+		if (match) {
+
+		}
+		return (match && this->desc != nullptr && description != nullptr) ? true : false;
 	}
 
 	//If the state of the Item is good, it will write SKU, description, on - hand quantity, needed quantityand price in tab - separated format.
@@ -184,6 +189,8 @@ namespace sdds {
 	//If the state is bad, the state is printed instead.
 	//If the state is good the following will be done.
 	ostream& Item::display(ostream& ostr)const {
+		string str_desc = desc;
+		str_desc = str_desc.substr(0, 35);
 
 		if (ostr.fail())
 		{
@@ -191,10 +198,10 @@ namespace sdds {
 		}
 		else if(linear()){
 			ostr << setw(5) << sku << " | "
-				<< setw(35) << left << desc << " | "
+				<< setw(35) << left << str_desc << " | "
 				<< setw(4) << right << hand_qua << " | "
 				<< setw(4) << right << need_qua << " | "
-				<< right << right << fixed << setprecision(2) << price << " | ";
+				<< setw(7) << right << fixed << setprecision(2) << price << " | ";
 		}
 		else
 		{
