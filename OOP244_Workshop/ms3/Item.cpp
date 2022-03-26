@@ -189,6 +189,7 @@ namespace sdds {
 	//If the state is bad, the state is printed instead.
 	//If the state is good the following will be done.
 	ostream& Item::display(ostream& ostr)const {
+		//Note that if the description is too long only the first 35 characters will be printed
 		string str_desc = desc;
 		str_desc = str_desc.substr(0, 35);
 
