@@ -23,7 +23,7 @@ namespace sdds {
 	class Status : public Utils
 	{
 		char* desc{};
-		int code;
+		int code=0;
 		void setEmpty();
 
 	public:

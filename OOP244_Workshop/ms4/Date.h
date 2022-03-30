@@ -23,10 +23,10 @@ namespace sdds {
 	class Date : public Status
 	{
 		const int max_year = 2030;
-		int year;
-		int month;
-		int day;
-		bool isFormat;
+		int year =0;
+		int month=0;
+		int day=0;
+		bool isFormat =0;
 		Status s;
 		bool validate();
 		int uniqueDate();

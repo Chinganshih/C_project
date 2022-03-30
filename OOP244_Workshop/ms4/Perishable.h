@@ -27,6 +27,7 @@ namespace sdds {
 	public:
 		Perishable();
 		~Perishable();
+		Perishable& clear();
 		Perishable(const Perishable& p);
 		Perishable& operator=(const Perishable& p);
 		const Date& expiry() const;
@@ -35,6 +36,7 @@ namespace sdds {
 		std::ifstream& load(std::ifstream& ifstr);
 		std::ostream& display(std::ostream& ostr)const;
 		std::istream& read(std::istream& istr);
+		
 	};
 	
 

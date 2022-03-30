@@ -237,7 +237,6 @@ namespace sdds {
 			istr.get(indesc, 100, '\n');
 			ut.extractChar(istr, '\n');
 			ut.alocpy(desc, indesc);
-			delete[] indesc;
 			cout << "Quantity Needed: ";
 			need_qua = ut.getint(1, 9999, "validNeed");
 			ut.extractChar(istr, '\n');
@@ -248,6 +247,8 @@ namespace sdds {
 			price = ut.getDouble(0.0, 9999.0, "validPrice");
 			ut.extractChar(istr, '\n');
 		}
+		delete[] indesc;
+		indesc = nullptr;
 
 		return istr;
 	}

@@ -59,13 +59,13 @@ namespace sdds {
 		return this->year * 372 + this->month * 31 + this->day;
 	}
 
-	Date::Date()
+	Date::Date() : Status()
 	{
 		this->set(sdds_testYear, sdds_testMon, sdds_testDay);
 		this->isFormat = 1;
 	}
 
-	Date::Date(int year, int month, int day) {
+	Date::Date(int year, int month, int day) : Status(){
 		this->set(year, month, day);
 	}
 
@@ -157,7 +157,7 @@ namespace sdds {
 
 	istream& Date::read(istream& istr) {
 		char ch;
-		int date, year, mon, day;
+		int date=0, year=0, mon=0, day=0;
 		istr >> date;
 		ch = istr.peek();
 		if (ch == '\n')

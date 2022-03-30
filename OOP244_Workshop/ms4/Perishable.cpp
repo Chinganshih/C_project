@@ -35,6 +35,13 @@ namespace sdds {
 		instruction = nullptr;
 	}
 
+	Perishable& Perishable::clear() {
+		delete[] instruction;
+		instruction = nullptr;
+
+		return *this;
+	}
+
 	Perishable::Perishable(const Perishable& p):instruction(nullptr) {
 		//shallow copy
 		this->expiryDate = p.expiryDate;
@@ -97,8 +104,10 @@ namespace sdds {
 	ifstream& Perishable::load(ifstream& ifstr) {
 		string instr;
 		char ch;
+
 		delete[] instruction;
 		instruction = nullptr;
+		clear();
 
 		//calls the load of the Base class.
 		Item::load(ifstr);
@@ -183,6 +192,9 @@ namespace sdds {
 
 		if (istr.fail()) s = "Perishable console date entry failed!";
 		
+		delete[] instr;
+		instr = nullptr;
+
 		return istr;
 	}
 }
