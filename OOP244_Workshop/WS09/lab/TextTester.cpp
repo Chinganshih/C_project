@@ -9,7 +9,7 @@ Revision History
 Date       Reason
 -----------------------------------------------------------*/
 #include <iostream>
-#include "HtmlText.h"
+#include <fstream>
 #include "Text.h"
 using namespace std;
 using namespace sdds;

@@ -146,6 +146,7 @@
     <ClCompile Include="HtmlText.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Text.cpp" />
+    <ClCompile Include="TextTester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="dcwr.txt" />
