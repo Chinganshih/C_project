@@ -23,7 +23,7 @@ namespace sdds {
 		~Text();
 		void alloCopy(char*& destination, const char* source);
 		std::istream& read(std::istream& istr);
-		std::ostream& write(std::ostream& ostr)const;
+		virtual std::ostream& write(std::ostream& ostr)const;
 		int getFileLength(std::istream& is);
 		void extractChar(std::istream& istr, char ch) const;
 	};

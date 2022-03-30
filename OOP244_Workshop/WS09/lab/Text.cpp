@@ -17,7 +17,7 @@ namespace sdds {
 	//This index operator provides read - only access to the content of the text for the derived classes of Text.
 	//The behaviour of the operator is not defined if the index goes out of bounds or if the content is null.
 	const char& Text::operator[](int index)const {
-		return *m_content;
+		return m_content[index];
 	}
 
 	Text::Text() : m_content(nullptr) {}
@@ -75,7 +75,7 @@ namespace sdds {
 		//reads the file into the allocated memory(character by character to the end)
 		getline(istr, content, '\0');
 		strcpy(m_content, content.c_str());
-		extractChar(istr, '\n');
+		//extractChar(istr, '\n');
 		//if any data is read, it will clear() the state of the istream object, otherwise, it will leave it as is.
 		if (m_content != nullptr) istr.clear();
 

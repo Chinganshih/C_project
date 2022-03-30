@@ -9,14 +9,20 @@
 #pragma once
 #ifndef _HTMLTEXT_H_
 #define _HTMLTEXT_H_
+#include "Text.h"
 
 namespace sdds {
-	class HtmlText
+	class HtmlText : public Text
 	{
-
+		char* m_title{};
+	
 	public:
 		HtmlText();
+		HtmlText(const char* title);
+		HtmlText(const HtmlText& h);
+		HtmlText& operator=(const HtmlText& h);
 		~HtmlText();
+		std::ostream& write(std::ostream& ostr)const;
 	};
 
 	

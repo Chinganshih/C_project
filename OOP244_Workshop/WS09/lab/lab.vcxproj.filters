@@ -43,5 +43,8 @@
     <Text Include="dcwr.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="dcwrLittle.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
