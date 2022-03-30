@@ -19,7 +19,7 @@ void show(Text T)  {
    cout << "*" << T << "*" << endl;
 }
 void saveHtml(HtmlText H) {
-   ofstream("dcwrLittle.html")<<H;
+   ofstream("dcwr.html")<<H;
 }
 void displayFile(const char* filename) {
    cout << "File: " << filename << endl;
@@ -36,7 +36,7 @@ int main() {
    Text Y;
    Text Z;
    ifstream test("test.txt");
-   ifstream dcwrLittle("dcwrLittle.txt");
+   ifstream dcwrLittle("dcwr.txt");
    test >> T;
    dcwrLittle >> Y;
    Y = T;
@@ -52,6 +52,6 @@ int main() {
    H2 = H1;
    H3 = H2;
    saveHtml(H3);
-   displayFile("dcwrLittle.html");
+   displayFile("dcwr.html");
    return 0;
 }
